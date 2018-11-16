@@ -1,0 +1,121 @@
+---
+name: Button
+menu: Components
+route: /components/button
+---
+
+import defaultTheme from "./theme";
+import { Playground, PropsTable } from "docz";
+import Button from "./Button.tsx";
+import { Send } from "styled-icons/material/Send";
+import { Menu } from "styled-icons/material/Menu";
+import { ExpandMore } from "styled-icons/material/ExpandMore";
+import { Refresh } from "styled-icons/material/Refresh";
+
+# Button
+
+<PropsTable of={Button} />
+
+## Appearances
+
+<Playground>
+  <Button>Default</Button>
+  <Button appearance="primary" ml={3}>
+    Primary
+  </Button>
+  <Button appearance="minimal" ml={3}>
+    Minimal
+  </Button>
+</Playground>
+
+## Size
+
+<Playground>
+  <Button size="large">Large</Button>
+  <Button ml={3}>Default</Button>
+  <Button size="small" ml={3}>
+    Small
+  </Button>
+</Playground>
+
+## Intent
+
+<Playground>
+  <Button>Default</Button>
+  <Button intent="none" ml={3}>
+    None
+  </Button>
+  <Button intent="success" ml={3}>
+    Success
+  </Button>
+  <Button intent="danger" ml={3}>
+    Danger
+  </Button>
+  <Button intent="warning" ml={3}>
+    Warning
+  </Button>
+</Playground>
+
+## Mixing appearance and intent
+
+<Playground>
+  <Button appearance="primary">Default</Button>
+  <Button appearance="primary" intent="none" ml={3}>None</Button>
+  <Button appearance="primary" intent="success" ml={3}>Success</Button>
+  <Button appearance="primary" intent="danger" ml={3}>Danger</Button>
+  <Button appearance="primary" intent="warning" ml={3}>Warning</Button>
+
+  <div style={{marginTop: "24px"}}>
+    <Button appearance="minimal">Default</Button>
+    <Button appearance="minimal" intent="none" ml={3}>None</Button>
+    <Button appearance="minimal" intent="success" ml={3}>Success</Button>
+    <Button appearance="minimal" intent="danger" ml={3}>Danger</Button>
+    <Button appearance="minimal" intent="warning" ml={3}>Warning</Button>
+  </div>
+</Playground>
+
+## With icons
+
+<Playground>
+  <Button iconAfter={<Send/>} size="large">Send</Button>
+  <Button iconAfter={<Send/>} ml={3}>Send</Button>
+  <Button iconAfter={<Send/>} ml={3} size="small">Send</Button>
+  <Button iconAfter={<Send/>} appearance="primary" ml={4} size="large">Send</Button>
+  <Button iconAfter={<Send/>} appearance="primary" ml={3}>Send</Button>
+  <Button iconAfter={<Send/>} appearance="primary" ml={3} size="small">Send</Button>
+
+<div style={{ marginTop: "24px" }}>
+  <Button
+    iconBefore={<Menu />}
+    iconColor={defaultTheme.colors.greyDark}
+    size="large"
+  >
+    Menu
+  </Button>
+  <Button iconBefore={<Menu />} iconColor={defaultTheme.colors.greyDark} ml={3}>
+    Menu
+  </Button>
+  <Button
+    iconBefore={<Menu />}
+    iconColor={defaultTheme.colors.greyDark}
+    ml={3}
+    size="small"
+  >
+    Menu
+  </Button>
+  <Button iconBefore={<Menu />} appearance="primary" ml={4} size="large">
+    Menu
+  </Button>
+  <Button iconBefore={<Menu />} appearance="primary" ml={3}>
+    Menu
+  </Button>
+  <Button iconBefore={<Menu />} appearance="primary" ml={3} size="small">
+    Menu
+  </Button>
+</div>
+
+  <div style={{marginTop: "24px"}}>
+    <Button iconAfter={<ExpandMore/>} appearance="minimal">Select</Button>
+    <Button iconBefore={<Refresh/>} iconColor={defaultTheme.colors.blueDark} ml={3} size="small" appearance="minimal" intent="none">Refresh</Button>
+  </div>
+</Playground>

@@ -1,0 +1,91 @@
+---
+name: Text
+menu: Components
+route: /components/text
+---
+
+import defaultTheme from "./theme";
+import { Playground, PropsTable } from "docz";
+import Text from "./Text.tsx";
+
+# Text
+
+<PropsTable of={Text} />
+
+## Sizes
+
+<Playground>
+  <Text fontSize={7} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={6} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={5} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={4} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={3} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={2} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={1} display="block">
+    Hello world
+  </Text>
+  <Text fontSize={0} display="block">
+    Hello world
+  </Text>
+</Playground>
+
+## Weights
+
+<Playground>
+  <Text fontSize={4} fontWeight={2} display="block">
+    Bold weight (2)
+  </Text>
+  <Text fontSize={4} display="block">
+    Default weight (1)
+  </Text>
+  <Text fontSize={4} fontWeight={0} display="block">
+    Thin weight (0)
+  </Text>
+</Playground>
+
+## Color
+
+<Playground>
+  <Text fontSize={3} color="blue" mr={2}>
+    blue
+  </Text>
+  <Text fontSize={3} color="blue.dark" mr={2}>
+    blue.dark
+  </Text>
+  <Text fontSize={3} color="blue.darker" mr={2}>
+    blue.darker
+  </Text>
+  <Text fontSize={3} color="green" mr={2}>
+    green
+  </Text>
+  <Text fontSize={3} color="grey.dark" mr={2}>
+    grey.dark
+  </Text>
+  <Text fontSize={3} color="grey" mr={2}>
+    grey
+  </Text>
+  <Text fontSize={3} color="grey.light" mr={2}>
+    grey.light
+  </Text>
+  <Text fontSize={3} color="grey.lighter" mr={2}>
+    grey.lighter
+  </Text>
+  <Text fontSize={3} color="orange" mr={2}>
+    orange
+  </Text>
+  <Text fontSize={3} color="red" mr={2}>
+    red
+  </Text>
+</Playground>

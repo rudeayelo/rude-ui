@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": true,
+          "browsers": "> 1%, not dead"
+        }
+      }
+    ]
+  ],
+  "plugins": [["styled-components", { "displayName": true }]]
+}
