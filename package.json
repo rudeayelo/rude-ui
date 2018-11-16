@@ -44,6 +44,7 @@
     "react": "16.6.3",
     "react-docgen-typescript-loader": "3.0.0",
     "react-dom": "16.6.3",
+    "standard-version": "4.4.0",
     "styled-components": "4.1.1",
     "styled-icons": "4.0.0",
     "styled-map": "3.2.0-rc.1",
@@ -58,8 +59,5 @@
     "react-dom": "16.6.3",
     "styled-components": "^4.0.3",
     "styled-icons": "4.0.0"
-  },
-  "dependencies": {
-    "standard-version": "4.4.0"
   }
 }
