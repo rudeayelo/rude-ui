@@ -25,6 +25,7 @@ import {
   WidthProps,
 } from "styled-system";
 import styled from "styled-components";
+import { ClassName } from "./types";
 
 type Props = AlignSelfProps &
   AlignItemsProps &
@@ -36,7 +37,9 @@ type Props = AlignSelfProps &
   MaxWidthProps &
   OrderProps &
   SpaceProps &
-  WidthProps;
+  WidthProps & {
+    className?: ClassName
+  };
 
 const Box = styled.div<Props>`
   ${alignItems}
