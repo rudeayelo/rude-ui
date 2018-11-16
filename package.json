@@ -7,7 +7,7 @@
     "build": "rm -rf dist; tsc; babel dist/src -d dist/src",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "release": "standard-version; cp package.json dist/src/package.json; cd dist/src; npm publish; cd ../.."
+    "prepare": "standard-version; cp package.json dist/src/package.json"
   },
   "repository": {
     "type": "git",
