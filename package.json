@@ -1,20 +1,20 @@
 {
   "name": "rude-ui",
-  "version": null,
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist; tsc; babel dist/src -d dist/src; cp package.json dist/src/package.json",
+    "build": "rm -rf dist; tsc; babel dist/src -d dist/src",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "release": "cd dist/src; npm publish; cd ../.."
+    "release": "stardard-version; cp package.json dist/src/package.json; cd dist/src; npm publish; cd ../.."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rudeayelo/rude-ui.git"
   },
   "keywords": [],
-  "author": "Rude Ayelo <rude.ayelo@xing.com> (http://rude.works)",
+  "author": "Rude Ayelo <me@rude.works> (http://rude.works)",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/rudeayelo/rude-ui/issues"
