@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/rudeayelo/rude-ui/compare/v0.2.0...v0.2.1) (2018-12-04)
+
+
+### Bug Fixes
+
+* **Button:** Correctly align icons with the text ([ed57196](https://github.com/rudeayelo/rude-ui/commit/ed57196))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/rudeayelo/rude-ui/compare/v0.0.2...v0.2.0) (2018-11-16)
 
