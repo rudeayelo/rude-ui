@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { borderColor, color, space, variant } from "./styleProps";
 import styledMap from "styled-map";
 import Text from "./Text";
@@ -49,16 +49,25 @@ const iconMargin = styledMap("size", {
   small: "6px",
 });
 
-const IconBefore = styled("span")<{ size?: Size; color?: Color }>`
-  margin-right: ${iconMargin};
+const iconStyles = css`
+  display: inline-flex;
+  align-items: center;
   width: ${iconSize};
   color: ${({ color }) => color};
+
+  & > * {
+    flex: 1;
+  }
+`;
+
+const IconBefore = styled("span")<{ size?: Size; color?: Color }>`
+  margin-right: ${iconMargin};
+  ${iconStyles};
 `;
 
 const IconAfter = styled("span")<{ size?: Size; color?: Color }>`
   margin-left: ${iconMargin};
-  width: ${iconSize};
-  color: ${({ color }) => color};
+  ${iconStyles};
 `;
 
 const Base: React.SFC<Props> = props => (
