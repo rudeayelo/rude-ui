@@ -1,23 +1,27 @@
 import styled from "styled-components";
-import { color, display, fontSize, fontWeight, space } from "./styleProps";
 import {
+  color,
   ColorProps,
+  display,
   DisplayProps,
+  fontSize,
   FontSizeProps,
+  fontWeight,
   FontWeightProps,
+  space,
   SpaceProps,
 } from "styled-system";
-import { ClassName } from "./types";
+import { ClassName } from "../types";
 
-type Props = ColorProps &
-  DisplayProps &
-  FontSizeProps &
-  FontWeightProps &
-  SpaceProps & {
-    className?: ClassName;
-  };
+interface InputProps
+  extends ColorProps,
+    DisplayProps,
+    FontSizeProps,
+    FontWeightProps,
+    SpaceProps,
+    ClassName {}
 
-const Input = styled.input<Props>`
+const Input = styled.input<InputProps>`
   display: inline-flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -33,15 +37,16 @@ const Input = styled.input<Props>`
 
   &:hover,
   &:focus {
+    outline: none;
     border-color: ${({ theme }) => theme.colors.border.dark};
   }
 `;
 
 Input.defaultProps = {
   fontWeight: 1,
-  pr: 2,
-  pl: 2,
   m: 0,
+  pl: 2,
+  pr: 2,
 };
 
 export default Input;

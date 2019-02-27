@@ -4,7 +4,7 @@ menu: Components
 route: /components/button
 ---
 
-import defaultTheme from "./theme";
+import baseTheme from "../theme";
 import { Playground, PropsTable } from "docz";
 import Button from "./Button.tsx";
 import { Send } from "styled-icons/material/Send";
@@ -13,8 +13,6 @@ import { ExpandMore } from "styled-icons/material/ExpandMore";
 import { Refresh } from "styled-icons/material/Refresh";
 
 # Button
-
-<PropsTable of={Button} />
 
 ## Appearances
 
@@ -87,17 +85,17 @@ import { Refresh } from "styled-icons/material/Refresh";
 <div style={{ marginTop: "24px" }}>
   <Button
     iconBefore={<Menu />}
-    iconColor={defaultTheme.colors.greyDark}
+    iconColor={baseTheme.colors.greyDark}
     size="large"
   >
     Menu
   </Button>
-  <Button iconBefore={<Menu />} iconColor={defaultTheme.colors.greyDark} ml={3}>
+  <Button iconBefore={<Menu />} iconColor={baseTheme.colors.greyDark} ml={3}>
     Menu
   </Button>
   <Button
     iconBefore={<Menu />}
-    iconColor={defaultTheme.colors.greyDark}
+    iconColor={baseTheme.colors.greyDark}
     ml={3}
     size="small"
   >
@@ -116,6 +114,10 @@ import { Refresh } from "styled-icons/material/Refresh";
 
   <div style={{marginTop: "24px"}}>
     <Button iconAfter={<ExpandMore/>} appearance="minimal">Select</Button>
-    <Button iconBefore={<Refresh/>} iconColor={defaultTheme.colors.blueDark} ml={3} size="small" appearance="minimal" intent="none">Refresh</Button>
+    <Button iconBefore={<Refresh/>} iconColor={baseTheme.colors.blueDark} ml={3} size="small" appearance="minimal" intent="none">Refresh</Button>
   </div>
 </Playground>
+
+## Api
+
+<PropsTable of={Button} />

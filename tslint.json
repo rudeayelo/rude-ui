@@ -1,20 +1,14 @@
 {
-  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "jsRules": {},
   "rules": {
-    "curly": false,
-    "interface-name": [true, "never-prefix"],
-    "ordered-imports": false,
-    "object-literal-sort-keys": false,
-    "no-console": false,
-    "no-unused-expression": [true, "allow-fast-null-checks"],
     "no-implicit-dependencies": [true, "dev"],
-    "no-duplicate-imports": false,
+    "interface-name": false,
+    "no-empty-interface": false,
     "no-submodule-imports": false,
-    "no-shadowed-variable": false,
-    "max-classes-per-file": false,
-    "no-var-keyword": false,
-    "no-parameter-reassignment": false,
-    "no-object-literal-type-assertion": false,
-    "typedef": [true, "call-signature"]
-  }
+    "ordered-imports": false,
+    "object-literal-sort-keys": false
+  },
+  "rulesDirectory": []
 }

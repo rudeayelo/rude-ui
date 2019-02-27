@@ -1,32 +1,30 @@
 import styled from "styled-components";
 import {
   color,
-  display,
-  fontSize,
-  fontWeight,
-  lineHeight,
-  space,
-} from "./styleProps";
-import {
   ColorProps,
+  display,
   DisplayProps,
+  fontSize,
   FontSizeProps,
+  fontWeight,
   FontWeightProps,
-  SpaceProps,
+  lineHeight,
   LineHeightProps,
+  space,
+  SpaceProps,
 } from "styled-system";
-import { ClassName } from "./types";
+import { ClassName } from "../types";
 
-type Props = ColorProps &
-  DisplayProps &
-  FontSizeProps &
-  FontWeightProps &
-  LineHeightProps &
-  SpaceProps & {
-    className?: ClassName;
-  };
+interface TextProps
+  extends ColorProps,
+    DisplayProps,
+    FontSizeProps,
+    FontWeightProps,
+    LineHeightProps,
+    SpaceProps,
+    ClassName {}
 
-const Text = styled.span<Props>`
+const Text = styled.span<TextProps>`
   margin: 0;
   padding: 0;
 

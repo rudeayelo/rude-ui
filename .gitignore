@@ -1,4 +1,9 @@
 node_modules
 dist
-.docz
 yarn-error.log
+
+# Docz in development
+.docz
+
+# Rollup
+.rpt2_cache

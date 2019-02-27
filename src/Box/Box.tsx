@@ -10,8 +10,6 @@ import {
   order,
   space,
   width,
-} from "./styleProps";
-import {
   AlignItemsProps,
   AlignSelfProps,
   DisplayProps,
@@ -25,23 +23,23 @@ import {
   WidthProps,
 } from "styled-system";
 import styled from "styled-components";
-import { ClassName } from "./types";
+import { ClassName } from "../types";
 
-type Props = AlignSelfProps &
-  AlignItemsProps &
-  DisplayProps &
-  FlexProps &
-  FlexDirectionProps &
-  HeightProps &
-  JustifyContentProps &
-  MaxWidthProps &
-  OrderProps &
-  SpaceProps &
-  WidthProps & {
-    className?: ClassName
-  };
+interface BoxProps
+  extends AlignSelfProps,
+    AlignItemsProps,
+    DisplayProps,
+    FlexProps,
+    FlexDirectionProps,
+    HeightProps,
+    JustifyContentProps,
+    MaxWidthProps,
+    OrderProps,
+    SpaceProps,
+    WidthProps,
+    ClassName {}
 
-const Box = styled.div<Props>`
+const Box = styled.div<BoxProps>`
   ${alignItems}
   ${alignSelf}
   ${display}

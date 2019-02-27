@@ -1,4 +1,5 @@
 import c from "color";
+import * as styledComponents from "styled-components";
 
 const baseColors = {
   blue: "hsl(210, 100%, 60%)",
@@ -8,6 +9,7 @@ const baseColors = {
   red: "hsl(10, 70%, 45%)",
 };
 
+// TODO: Shades function
 const colors = {
   blue: Object.assign(baseColors.blue, {
     dark: c(baseColors.blue)
@@ -22,7 +24,7 @@ const colors = {
   green: Object.assign(baseColors.green, {}),
   grey: Object.assign(baseColors.grey, {
     dark: c(baseColors.grey)
-      .darken(0.5)
+      .lightness(10)
       .hsl()
       .string(),
     light: c(baseColors.grey)
@@ -30,7 +32,7 @@ const colors = {
       .hsl()
       .string(),
     lighter: c(baseColors.grey)
-      .lighten(1)
+      .lightness(90)
       .hsl()
       .string(),
   }),
@@ -48,7 +50,7 @@ const colors = {
 };
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72];
-const fontWeights = [400, 500, 600];
+const fontWeights = [300, 400, 700];
 
 const buttons = {
   intent: {
@@ -88,8 +90,11 @@ const buttons = {
       textShadow: "0 1px 0 hsla(0, 0%, 10%, .2)",
     },
     minimal: {
+      borderRadius: "6px",
       background: "none",
-      padding: 0,
+      "&:hover": {
+        backgroundColor: colors.grey.lighter,
+      },
     },
   },
   size: {
@@ -117,10 +122,23 @@ const buttons = {
 const fontFamily =
   'ATCYara, "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
-export default {
+const baseTheme = {
   colors,
   fontFamily,
   fontSizes,
   fontWeights,
   buttons,
 };
+
+export type ThemeInterface = typeof baseTheme;
+export type ThemedProps<P> = styledComponents.ThemedStyledProps<
+  P,
+  ThemeInterface
+>;
+
+export const createTheme = (theme: styledComponents.DefaultTheme) => ({
+  ...baseTheme,
+  ...theme,
+});
+
+export default baseTheme;
