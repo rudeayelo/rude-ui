@@ -21,7 +21,7 @@
     "release": "standard-version -a",
     "postrelease": "run-s release:*",
     "release:tags": "git push --follow-tags origin master",
-    "release:github": "conventional-github-releaser -p angular",
+    "release:github": "export $(cat .env | xargs) && conventional-github-releaser -p angular",
     "prepublishOnly": "run-s validate build"
   },
   "repository": {

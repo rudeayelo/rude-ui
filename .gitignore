@@ -22,3 +22,6 @@ dist
 
 # Rollup
 .rpt2_cache
+
+# Environmental variables
+.env
