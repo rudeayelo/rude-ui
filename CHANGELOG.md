@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/rudeayelo/rude-ui/compare/v0.2.3...v0.3.0) (2019-02-28)
+
+
+### Bug Fixes
+
+* **script:** Fix `release` script getting stucked in watch tests mode ([88c7991](https://github.com/rudeayelo/rude-ui/commit/88c7991))
+
+
+### Features
+
+* **test:** Add Jest setup ([8e246fb](https://github.com/rudeayelo/rude-ui/commit/8e246fb))
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/rudeayelo/rude-ui/compare/v0.2.2...v0.2.3) (2019-02-27)
 
