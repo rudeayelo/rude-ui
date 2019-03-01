@@ -24,7 +24,7 @@ interface TextProps
     SpaceProps,
     ClassName {}
 
-const Text = styled.span<TextProps>`
+const Text = styled.div<TextProps>`
   margin: 0;
   padding: 0;
 
