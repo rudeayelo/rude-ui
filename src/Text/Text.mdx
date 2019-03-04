@@ -5,6 +5,7 @@ route: /components/text
 ---
 
 import { Playground, PropsTable } from "docz";
+import Box from "../Box/Box.tsx";
 import Text from "./Text.tsx";
 
 # Text
@@ -37,36 +38,103 @@ import Text from "./Text.tsx";
 ## Color
 
 <Playground>
-  <Text fontSize={3} color="blue" mr={2} display="inline">
-    blue
-  </Text>
-  <Text fontSize={3} color="blue.dark" mr={2} display="inline">
-    blue.dark
-  </Text>
-  <Text fontSize={3} color="blue.darker" mr={2} display="inline">
-    blue.darker
-  </Text>
-  <Text fontSize={3} color="green" mr={2} display="inline">
-    green
-  </Text>
-  <Text fontSize={3} color="grey.dark" mr={2} display="inline">
-    grey.dark
-  </Text>
-  <Text fontSize={3} color="grey" mr={2} display="inline">
-    grey
-  </Text>
-  <Text fontSize={3} color="grey.light" mr={2} display="inline">
-    grey.light
-  </Text>
-  <Text fontSize={3} color="grey.lighter" mr={2} display="inline">
-    grey.lighter
-  </Text>
-  <Text fontSize={3} color="orange" mr={2} display="inline">
-    orange
-  </Text>
-  <Text fontSize={3} color="red" mr={2} display="inline">
-    red
-  </Text>
+  <Box>
+    <Text fontSize={3} color="blue.lightest" mr={2} display="inline">
+      blue.lightest
+    </Text>
+    <Text fontSize={3} color="blue.light" mr={2} display="inline">
+      blue.light
+    </Text>
+    <Text fontSize={3} color="blue.base" mr={2} display="inline">
+      blue.base
+    </Text>
+    <Text fontSize={3} color="blue.dark" mr={2} display="inline">
+      blue.dark
+    </Text>
+    <Text fontSize={3} color="blue.darkest" mr={2} display="inline">
+      blue.darkest
+    </Text>
+  </Box>
+  <Box>
+    <Text fontSize={3} color="green.lightest" mr={2} display="inline">
+      green.lightest
+    </Text>
+    <Text fontSize={3} color="green.light" mr={2} display="inline">
+      green.light
+    </Text>
+    <Text fontSize={3} color="green.base" mr={2} display="inline">
+      green.base
+    </Text>
+    <Text fontSize={3} color="green.dark" mr={2} display="inline">
+      green.dark
+    </Text>
+    <Text fontSize={3} color="green.darkest" mr={2} display="inline">
+      green.darkest
+    </Text>
+  </Box>
+  <Box>
+    <Text fontSize={3} color="orange.lightest" mr={2} display="inline">
+      orange.lightest
+    </Text>
+    <Text fontSize={3} color="orange.light" mr={2} display="inline">
+      orange.light
+    </Text>
+    <Text fontSize={3} color="orange.base" mr={2} display="inline">
+      orange.base
+    </Text>
+    <Text fontSize={3} color="orange.dark" mr={2} display="inline">
+      orange.dark
+    </Text>
+    <Text fontSize={3} color="orange.darkest" mr={2} display="inline">
+      orange.darkest
+    </Text>
+  </Box>
+  <Box>
+    <Text fontSize={3} color="red.lightest" mr={2} display="inline">
+      red.lightest
+    </Text>
+    <Text fontSize={3} color="red.light" mr={2} display="inline">
+      red.light
+    </Text>
+    <Text fontSize={3} color="red.base" mr={2} display="inline">
+      red.base
+    </Text>
+    <Text fontSize={3} color="red.dark" mr={2} display="inline">
+      red.dark
+    </Text>
+    <Text fontSize={3} color="red.darkest" mr={2} display="inline">
+      red.darkest
+    </Text>
+  </Box>
+  <Box>
+    <Text fontSize={3} color="g.90" mr={2} display="inline">
+      g.90
+    </Text>
+    <Text fontSize={3} color="g.80" mr={2} display="inline">
+      g.80
+    </Text>
+    <Text fontSize={3} color="g.70" mr={2} display="inline">
+      g.70
+    </Text>
+    <Text fontSize={3} color="g.60" mr={2} display="inline">
+      g.60
+    </Text>
+    <Text fontSize={3} color="g.50" mr={2} display="inline">
+      g.50
+    </Text>
+    <Text fontSize={3} color="g.40" mr={2} display="inline">
+      g.40
+    </Text>
+    <Text fontSize={3} color="g.30" mr={2} display="inline">
+      g.30
+    </Text>
+    <Text fontSize={3} color="g.20" mr={2} display="inline">
+      g.20
+    </Text>
+    <Text fontSize={3} color="g.10" mr={2} display="inline">
+      g.10
+    </Text>
+  </Box>
 </Playground>
 
 ## Api

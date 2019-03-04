@@ -1,6 +1,24 @@
 import c from "color";
 import * as styledComponents from "styled-components";
 
+const lightness = (color: string, amount: number): string =>
+  c(color)
+    .lightness(amount)
+    .hsl()
+    .string();
+
+const lighten = (color: string, amount: number): string =>
+  c(color)
+    .lighten(amount)
+    .hsl()
+    .string();
+
+const darken = (color: string, amount: number): string =>
+  c(color)
+    .darken(amount)
+    .hsl()
+    .string();
+
 const baseColors = {
   blue: "hsl(210, 100%, 60%)",
   green: "hsl(90, 50%, 45%)",
@@ -9,111 +27,117 @@ const baseColors = {
   red: "hsl(10, 70%, 45%)",
 };
 
-// TODO: Shades function
 const colors = {
-  blue: Object.assign(baseColors.blue, {
-    dark: c(baseColors.blue)
-      .darken(0.4)
-      .hsl()
-      .string(),
-    darker: c(baseColors.blue)
-      .darken(0.6)
-      .hsl()
-      .string(),
-  }),
-  green: Object.assign(baseColors.green, {}),
-  grey: Object.assign(baseColors.grey, {
-    dark: c(baseColors.grey)
-      .lightness(10)
-      .hsl()
-      .string(),
-    light: c(baseColors.grey)
-      .lighten(0.5)
-      .hsl()
-      .string(),
-    lighter: c(baseColors.grey)
-      .lightness(90)
-      .hsl()
-      .string(),
-  }),
-  orange: Object.assign(baseColors.orange, {}),
-  red: Object.assign(baseColors.red, {}),
-  border: Object.assign(
-    c(baseColors.grey)
-      .lighten(1)
-      .hsl()
-      .string(),
-    {
-      dark: baseColors.grey,
-    },
-  ),
+  blue: {
+    base: baseColors.blue,
+    lightest: lighten(baseColors.blue, 0.5),
+    light: lighten(baseColors.blue, 0.3),
+    dark: darken(baseColors.blue, 0.4),
+    darkest: darken(baseColors.blue, 0.6),
+  },
+  green: {
+    base: baseColors.green,
+    lightest: lighten(baseColors.green, 0.6),
+    light: lighten(baseColors.green, 0.4),
+    dark: darken(baseColors.green, 0.4),
+    darkest: darken(baseColors.green, 0.6),
+  },
+  g: {
+    "10": lightness(baseColors.grey, 10),
+    "20": lightness(baseColors.grey, 20),
+    "30": lightness(baseColors.grey, 30),
+    "40": lightness(baseColors.grey, 40),
+    "50": lightness(baseColors.grey, 50),
+    "60": lightness(baseColors.grey, 60),
+    "70": lightness(baseColors.grey, 70),
+    "80": lightness(baseColors.grey, 80),
+    "90": lightness(baseColors.grey, 90),
+    "95": lightness(baseColors.grey, 95),
+  },
+  orange: {
+    base: baseColors.orange,
+    lightest: lighten(baseColors.orange, 0.6),
+    light: lighten(baseColors.orange, 0.4),
+    dark: darken(baseColors.orange, 0.4),
+    darkest: darken(baseColors.orange, 0.6),
+  },
+  red: {
+    base: baseColors.red,
+    lightest: lighten(baseColors.red, 0.6),
+    light: lighten(baseColors.red, 0.4),
+    dark: darken(baseColors.red, 0.4),
+    darkest: darken(baseColors.red, 0.6),
+  },
 };
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72];
 const fontWeights = [300, 400, 700];
 
+const shadows = [
+  "0 0 1px hsla(210, 0%, 10%, .05)",
+  "0 3px 6px hsla(210, 0%, 10%, .1)",
+  "0 10px 20px hsla(0, 0%, 0%, .1)",
+];
+
+const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
+
 const buttons = {
   intent: {
     none: {
-      color: colors.grey,
-      background: colors.grey.dark,
+      color: colors.g["30"],
+      background: colors.g["30"],
     },
     default: {
       color: colors.blue.dark,
       background: colors.blue.dark,
     },
     success: {
-      color: colors.green,
-      background: colors.green,
+      color: colors.green.base,
+      background: colors.green.base,
     },
     danger: {
-      color: colors.red,
-      background: colors.red,
+      color: colors.red.base,
+      background: colors.red.base,
     },
     warning: {
-      color: colors.orange,
-      background: colors.orange,
+      color: colors.orange.base,
+      background: colors.orange.base,
     },
   },
   appearance: {
     default: {
-      borderRadius: "6px",
-      background: "linear-gradient(to top, hsl(210, 0%, 97%), white 10%)",
-      boxShadow:
-        "inset 0 0 0 1px hsla(0, 0%, 100%, .5), inset 0 0 2px hsla(210, 0%, 10%, .05), 0 0 1px hsla(210, 0%, 10%, .1), 0 2px 2px hsla(210, 0%, 10%, .1)",
+      borderRadius: "99px",
+      background: "linear-gradient(to top, currentColor -3000%, white 400%)",
     },
     primary: {
-      borderRadius: "6px",
-      color: "hsla(0, 0%, 100%, .85)",
-      boxShadow:
-        "inset 0 0 1px hsla(0, 0%, 10%, .05), inset 0 -4px 4px hsla(0, 0%, 10%, .1), 0 0 1px hsla(0, 0%, 10%, .15), 0 2px 2px hsla(0, 0%, 10%, .1)",
-      textShadow: "0 1px 0 hsla(0, 0%, 10%, .2)",
+      borderRadius: "99px",
+      color: "hsla(0, 0%, 100%, .95)",
     },
     minimal: {
-      borderRadius: "6px",
+      borderRadius: "99px",
       background: "none",
       "&:hover": {
-        backgroundColor: colors.grey.lighter,
+        backgroundColor: colors.g["95"],
       },
     },
   },
   size: {
     small: {
-      paddingRight: "8px",
-      paddingLeft: "8px",
-      height: "24px",
+      paddingRight: space[3],
+      paddingLeft: space[3],
+      height: space[4],
       fontSize: `${fontSizes[0]}px`,
     },
     medium: {
-      paddingRight: "16px",
-      paddingLeft: "16px",
-      height: "32px",
+      paddingRight: space[3],
+      paddingLeft: space[3],
+      height: space[5],
       fontSize: `${fontSizes[1]}px`,
     },
     large: {
-      paddingRight: "24px",
-      paddingLeft: "24px",
-      height: "48px",
+      paddingRight: space[5],
+      paddingLeft: space[5],
+      height: space[6],
       fontSize: `${fontSizes[2]}px`,
     },
   },
@@ -123,11 +147,13 @@ const fontFamily =
   'ATCYara, "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
 const baseTheme = {
+  buttons,
   colors,
   fontFamily,
   fontSizes,
   fontWeights,
-  buttons,
+  shadows,
+  space,
 };
 
 export type ThemeInterface = typeof baseTheme;

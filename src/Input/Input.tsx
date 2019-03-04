@@ -11,7 +11,14 @@ import {
   space,
   SpaceProps,
 } from "styled-system";
+import c from "color";
 import { ClassName } from "../types";
+
+const toShadow = (col: string): string =>
+  c(col)
+    .alpha(0.2)
+    .hsl()
+    .string();
 
 interface InputProps
   extends ColorProps,
@@ -22,12 +29,14 @@ interface InputProps
     ClassName {}
 
 const Input = styled.input<InputProps>`
+  -webkit-appearance: initial; /* Resets the appearance in mobile Safari */
   display: inline-flex;
   flex-wrap: nowrap;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: none;
   border-radius: 6px;
   height: 32px;
+  box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.05), 0 3px 6px hsla(0, 0%, 0%, 0.12);
 
   ${color};
   ${display};
@@ -37,8 +46,14 @@ const Input = styled.input<InputProps>`
 
   &:hover,
   &:focus {
+    transition: box-shadow 150ms ease-in;
+    box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.05), 0 5px 10px hsla(0, 0%, 0%, 0.12);
+  }
+
+  &:focus {
     outline: none;
-    border-color: ${({ theme }) => theme.colors.border.dark};
+    box-shadow: ${({ theme }) => `0 0 0 3px ${toShadow(theme.colors.blue.dark)},
+    0 3px 6px hsla(0, 0%, 0%, 0.12);`};
   }
 `;
 
