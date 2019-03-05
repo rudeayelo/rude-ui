@@ -16,7 +16,7 @@ export interface ButtonProps extends SpaceProps, ClassName {
   iconBefore?: React.ReactNode;
   iconColor?: Color;
   intent?: Intent;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   size?: Size;
 }
 
@@ -103,7 +103,6 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
     )}
   </ButtonStyled>
 );
-
 Button.defaultProps = {
   appearance: "default",
   intent: "default",
