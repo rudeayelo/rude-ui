@@ -75,6 +75,7 @@ const IconAfter = styled.span<IconProps>`
 
 const ButtonStyled = styled.button`
   display: inline-flex;
+  vertical-align: middle;
   flex-wrap: nowrap;
   align-items: center;
   cursor: pointer;

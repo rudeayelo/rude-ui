@@ -38,6 +38,7 @@ const Text = styled.div<TextProps>`
 
 Text.defaultProps = {
   fontWeight: 1,
+  fontSize: 1,
 };
 
 export default Text;

@@ -27,7 +27,7 @@ const baseColors = {
   red: "hsl(10, 70%, 45%)",
 };
 
-const colors = {
+const paletteColors = {
   blue: {
     base: baseColors.blue,
     lightest: lighten(baseColors.blue, 0.5),
@@ -70,6 +70,16 @@ const colors = {
   },
 };
 
+const aliasColors = {
+  background: paletteColors.g["95"],
+  accentBackground: "white",
+};
+
+const colors = {
+  ...paletteColors,
+  ...aliasColors,
+};
+
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72];
 const fontWeights = [300, 400, 700];
 
@@ -79,29 +89,34 @@ const shadows = [
   "0 10px 20px hsla(0, 0%, 0%, .1)",
 ];
 
+const levels = {
+  "0": { boxShadow: `${shadows[0]}, ${shadows[1]}` },
+  "1": { boxShadow: `${shadows[0]}, ${shadows[2]}` },
+};
+
 const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
 
 const buttons = {
   intent: {
     none: {
-      color: colors.g["30"],
-      background: colors.g["30"],
+      color: paletteColors.g["30"],
+      background: paletteColors.g["30"],
     },
     default: {
-      color: colors.blue.dark,
-      background: colors.blue.dark,
+      color: paletteColors.blue.dark,
+      background: paletteColors.blue.dark,
     },
     success: {
-      color: colors.green.base,
-      background: colors.green.base,
+      color: paletteColors.green.base,
+      background: paletteColors.green.base,
     },
     danger: {
-      color: colors.red.base,
-      background: colors.red.base,
+      color: paletteColors.red.base,
+      background: paletteColors.red.base,
     },
     warning: {
-      color: colors.orange.base,
-      background: colors.orange.base,
+      color: paletteColors.orange.base,
+      background: paletteColors.orange.base,
     },
   },
   appearance: {
@@ -117,7 +132,7 @@ const buttons = {
       borderRadius: "99px",
       background: "none",
       "&:hover": {
-        backgroundColor: colors.g["95"],
+        backgroundColor: paletteColors.g["95"],
       },
     },
   },
@@ -153,6 +168,7 @@ const baseTheme = {
   fontSizes,
   fontWeights,
   shadows,
+  levels,
   space,
 };
 

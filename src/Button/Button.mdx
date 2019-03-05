@@ -11,6 +11,7 @@ import { Send } from "styled-icons/material/Send";
 import { Menu } from "styled-icons/material/Menu";
 import { ExpandMore } from "styled-icons/material/ExpandMore";
 import { Refresh } from "styled-icons/material/Refresh";
+import { DeleteForever } from "styled-icons/material/DeleteForever";
 
 # Button
 
@@ -78,9 +79,9 @@ import { Refresh } from "styled-icons/material/Refresh";
   <Button iconAfter={<Send/>} size="large">Send</Button>
   <Button iconAfter={<Send/>} ml={3}>Send</Button>
   <Button iconAfter={<Send/>} ml={3} size="small">Send</Button>
-  <Button iconAfter={<Send/>} appearance="primary" ml={4} size="large">Send</Button>
-  <Button iconAfter={<Send/>} appearance="primary" ml={3}>Send</Button>
-  <Button iconAfter={<Send/>} appearance="primary" ml={3} size="small">Send</Button>
+  <Button iconBefore={<DeleteForever/>} intent="danger" ml={4} size="large">Delete</Button>
+  <Button iconBefore={<DeleteForever/>} intent="danger" ml={3}>Delete</Button>
+  <Button iconBefore={<DeleteForever/>} intent="danger" ml={3} size="small">Delete</Button>
 
 <div style={{ marginTop: "24px" }}>
   <Button
