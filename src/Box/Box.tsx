@@ -25,7 +25,7 @@ import {
 import styled from "styled-components";
 import { ClassName } from "../types";
 
-interface BoxProps
+export interface BoxProps
   extends AlignSelfProps,
     AlignItemsProps,
     DisplayProps,

@@ -20,7 +20,7 @@ const toShadow = (col: string): string =>
     .hsl()
     .string();
 
-interface InputProps
+export interface InputProps
   extends ColorProps,
     DisplayProps,
     FontSizeProps,
@@ -36,7 +36,7 @@ const Input = styled.input<InputProps>`
   border: none;
   border-radius: 6px;
   height: 32px;
-  box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.05), 0 3px 6px hsla(0, 0%, 0%, 0.12);
+  box-shadow: ${({ theme }) => `${theme.shadows[0]}, ${theme.shadows[1]}`};
 
   ${color};
   ${display};
@@ -47,13 +47,12 @@ const Input = styled.input<InputProps>`
   &:hover,
   &:focus {
     transition: box-shadow 150ms ease-in;
-    box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.05), 0 5px 10px hsla(0, 0%, 0%, 0.12);
   }
 
   &:focus {
     outline: none;
-    box-shadow: ${({ theme }) => `0 0 0 3px ${toShadow(theme.colors.blue.dark)},
-    0 3px 6px hsla(0, 0%, 0%, 0.12);`};
+    box-shadow: ${({ theme }) =>
+      `0 0 0 3px ${toShadow(theme.colors.blue.dark)}, ${theme.shadows[1]}`};
   }
 `;
 

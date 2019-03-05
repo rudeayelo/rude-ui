@@ -15,7 +15,7 @@ import {
 } from "styled-system";
 import { ClassName } from "../types";
 
-interface TextProps
+export interface TextProps
   extends ColorProps,
     DisplayProps,
     FontSizeProps,

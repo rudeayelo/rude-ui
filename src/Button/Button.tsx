@@ -10,7 +10,7 @@ type Appearance = "default" | "primary" | "minimal";
 type Color = string;
 type Size = "small" | "medium" | "large";
 
-interface ButtonProps extends SpaceProps, ClassName {
+export interface ButtonProps extends SpaceProps, ClassName {
   appearance?: Appearance;
   iconAfter?: React.ReactNode;
   iconBefore?: React.ReactNode;
