@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.2"></a>
+## [0.6.2](https://github.com/rudeayelo/rude-ui/compare/v0.6.1...v0.6.2) (2019-03-05)
+
+
+### Bug Fixes
+
+* **Button:** Correctly type the `onClick` props ([8af2ea9](https://github.com/rudeayelo/rude-ui/commit/8af2ea9))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/rudeayelo/rude-ui/compare/v0.6.0...v0.6.1) (2019-03-05)
 
