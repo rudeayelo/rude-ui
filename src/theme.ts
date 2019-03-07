@@ -123,16 +123,24 @@ const buttons = {
     default: {
       borderRadius: "99px",
       background: "linear-gradient(to top, currentColor -3000%, white 400%)",
+      "&:hover": {
+        background: "linear-gradient(to top, currentColor -2700%, white 700%)",
+      },
     },
     primary: {
       borderRadius: "99px",
       color: "hsla(0, 0%, 100%, .95)",
+      "&:hover": {
+        boxShadow: `${(shadows[0], shadows[1])}`,
+      },
     },
     minimal: {
       borderRadius: "99px",
-      background: "none",
+      "&:not(:hover)": {
+        background: "none",
+      },
       "&:hover": {
-        backgroundColor: paletteColors.g["95"],
+        background: "linear-gradient(to top, currentColor -3000%, white 400%)",
       },
     },
   },

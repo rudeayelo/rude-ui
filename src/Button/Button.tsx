@@ -64,8 +64,11 @@ const iconStyles = css`
 `;
 
 const IconBefore = styled.span<IconProps>`
-  margin-right: ${iconMargin};
   ${iconStyles};
+
+  & + * {
+    margin-left: ${iconMargin};
+  }
 `;
 
 const IconAfter = styled.span<IconProps>`
@@ -95,7 +98,7 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
         {props.iconBefore}
       </IconBefore>
     )}
-    <Text>{props.children}</Text>
+    {props.children && <Text>{props.children}</Text>}
     {props.iconAfter && (
       <IconAfter size={props.size} color={props.iconColor}>
         {props.iconAfter}

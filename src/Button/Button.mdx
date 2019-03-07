@@ -6,7 +6,8 @@ route: /components/button
 
 import baseTheme from "../theme";
 import { Playground, PropsTable } from "docz";
-import Button from "./Button.tsx";
+import Button from ".";
+import IconButton from "../IconButton";
 import { Send } from "styled-icons/material/Send";
 import { Menu } from "styled-icons/material/Menu";
 import { ExpandMore } from "styled-icons/material/ExpandMore";
@@ -117,6 +118,19 @@ import { DeleteForever } from "styled-icons/material/DeleteForever";
     <Button iconAfter={<ExpandMore/>} appearance="minimal">Select</Button>
     <Button iconBefore={<Refresh/>} iconColor={baseTheme.colors.blueDark} ml={3} size="small" appearance="minimal" intent="none">Refresh</Button>
   </div>
+</Playground>
+
+## Icon button
+
+<Playground>
+  <IconButton icon={<Menu />} />
+  <IconButton
+    icon={<DeleteForever />}
+    appearance="minimal"
+    intent="danger"
+    ml={4}
+  />
+  <IconButton icon={<Send />} appearance="primary" ml={4} />
 </Playground>
 
 ## Api
