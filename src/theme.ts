@@ -131,7 +131,7 @@ const buttons = {
       borderRadius: "99px",
       color: "hsla(0, 0%, 100%, .95)",
       "&:hover": {
-        boxShadow: `${(shadows[0], shadows[1])}`,
+        boxShadow: `${shadows[0]}, ${shadows[1]}`,
       },
     },
     minimal: {
