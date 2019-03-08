@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/rudeayelo/rude-ui/compare/v0.7.0...v0.8.0) (2019-03-08)
+
+
+### Features
+
+* **Text:** Adds a `textSize` to be used as a default for sizing text ([3d5bf10](https://github.com/rudeayelo/rude-ui/commit/3d5bf10))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/rudeayelo/rude-ui/compare/v0.6.2...v0.7.0) (2019-03-07)
 
