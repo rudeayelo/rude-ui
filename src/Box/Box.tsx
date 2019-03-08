@@ -1,25 +1,29 @@
 import {
   alignItems,
+  AlignItemsProps,
   alignSelf,
+  AlignSelfProps,
   display,
+  DisplayProps,
   flex,
   flexDirection,
-  height,
-  justifyContent,
-  maxWidth,
-  order,
-  space,
-  width,
-  AlignItemsProps,
-  AlignSelfProps,
-  DisplayProps,
-  FlexProps,
   FlexDirectionProps,
+  FlexProps,
+  height,
   HeightProps,
+  justifyContent,
   JustifyContentProps,
+  maxWidth,
   MaxWidthProps,
+  minWidth,
+  MinWidthProps,
+  order,
   OrderProps,
+  position,
+  PositionProps,
+  space,
   SpaceProps,
+  width,
   WidthProps,
 } from "styled-system";
 import styled from "styled-components";
@@ -33,7 +37,9 @@ export interface BoxProps
     FlexDirectionProps,
     HeightProps,
     JustifyContentProps,
+    MinWidthProps,
     MaxWidthProps,
+    PositionProps,
     OrderProps,
     SpaceProps,
     WidthProps,
@@ -47,7 +53,9 @@ const Box = styled.div<BoxProps>`
   ${flexDirection}
   ${height}
   ${justifyContent}
+  ${minWidth}
   ${maxWidth}
+  ${position}
   ${order}
   ${space}
   ${width}

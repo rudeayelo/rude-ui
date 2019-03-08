@@ -59,8 +59,7 @@ const Input = styled.input<InputProps>`
 Input.defaultProps = {
   fontWeight: 1,
   m: 0,
-  pl: 2,
-  pr: 2,
+  px: 2,
 };
 
 export default Input;

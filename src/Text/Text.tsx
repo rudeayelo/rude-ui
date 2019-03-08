@@ -13,6 +13,7 @@ import {
   space,
   SpaceProps,
 } from "styled-system";
+import { textSize, TextSize } from "../variants";
 import { ClassName } from "../types";
 
 export interface TextProps
@@ -22,11 +23,14 @@ export interface TextProps
     FontWeightProps,
     LineHeightProps,
     SpaceProps,
+    TextSize,
     ClassName {}
 
 const Text = styled.div<TextProps>`
   margin: 0;
   padding: 0;
+
+  ${textSize}
 
   ${color};
   ${display};
@@ -37,8 +41,7 @@ const Text = styled.div<TextProps>`
 `;
 
 Text.defaultProps = {
-  fontWeight: 1,
-  fontSize: 1,
+  textSize: 1,
 };
 
 export default Text;

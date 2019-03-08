@@ -81,6 +81,7 @@ const colors = {
 };
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72];
+const lineHeights = [1.5, 1.5, 1.5, 1.4, 1.2, 1.1, 1, 1, 0.9];
 const fontWeights = [300, 400, 700];
 
 const shadows = [
@@ -92,6 +93,18 @@ const shadows = [
 const levels = {
   "0": { boxShadow: `${shadows[0]}, ${shadows[1]}` },
   "1": { boxShadow: `${shadows[0]}, ${shadows[2]}` },
+};
+
+const textSizes = {
+  "0": { fontSize: fontSizes[0], lineHeight: lineHeights[0] },
+  "1": { fontSize: fontSizes[1], lineHeight: lineHeights[1] },
+  "2": { fontSize: fontSizes[2], lineHeight: lineHeights[2] },
+  "3": { fontSize: fontSizes[3], lineHeight: lineHeights[3] },
+  "4": { fontSize: fontSizes[4], lineHeight: lineHeights[4] },
+  "5": { fontSize: fontSizes[5], lineHeight: lineHeights[5] },
+  "6": { fontSize: fontSizes[6], lineHeight: lineHeights[6] },
+  "7": { fontSize: fontSizes[7], lineHeight: lineHeights[7] },
+  "8": { fontSize: fontSizes[8], lineHeight: lineHeights[8] },
 };
 
 const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
@@ -175,9 +188,11 @@ const baseTheme = {
   fontFamily,
   fontSizes,
   fontWeights,
-  shadows,
   levels,
+  lineHeights,
+  shadows,
   space,
+  textSizes,
 };
 
 export type ThemeInterface = typeof baseTheme;
