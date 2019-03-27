@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/rudeayelo/rude-ui/compare/v0.8.1...v0.9.0) (2019-03-27)
+
+
+### Features
+
+* **Docs:** Upgrade Docz and export only named components ([ca47f35](https://github.com/rudeayelo/rude-ui/commit/ca47f35))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/rudeayelo/rude-ui/compare/v0.8.0...v0.8.1) (2019-03-08)
 
