@@ -65,4 +65,4 @@ Box.defaultProps = {
   display: "flex",
 };
 
-export default Box;
+export { Box };

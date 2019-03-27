@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "../Button";
+import { Button } from "..";
 import { ButtonProps } from "../Button/Button";
 
-interface IconButtonProps extends ButtonProps {
+export interface IconButtonProps extends ButtonProps {
   icon: React.ReactNode;
 }
 
@@ -13,4 +13,4 @@ const IconButton = ({
   ...rest
 }: IconButtonProps) => <Button iconBefore={icon} {...rest} />;
 
-export default IconButton;
+export { IconButton };

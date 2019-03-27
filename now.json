@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "rude-ui",
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "alias": "rude-ui.now.sh"
+}

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 import styledMap from "styled-map";
-import Text from "../Text";
+import { Text } from "..";
 import { space, SpaceProps, variant } from "styled-system";
 import { ClassName, Intent } from "../types";
 import { ThemedProps } from "../theme";
@@ -91,14 +91,14 @@ const ButtonStyled = styled.button`
   ${space};
 `;
 
-const Button: React.FunctionComponent<ButtonProps> = props => (
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
   <ButtonStyled {...props}>
     {props.iconBefore && (
       <IconBefore size={props.size} color={props.iconColor}>
         {props.iconBefore}
       </IconBefore>
     )}
-    {props.children && <Text>{props.children}</Text>}
+    {children && <Text>{children}</Text>}
     {props.iconAfter && (
       <IconAfter size={props.size} color={props.iconColor}>
         {props.iconAfter}
@@ -112,4 +112,4 @@ Button.defaultProps = {
   size: "medium",
 };
 
-export default Button;
+export { Button };

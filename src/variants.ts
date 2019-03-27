@@ -1,13 +1,4 @@
 import { variant } from "styled-system";
-import { style } from "styled-system";
-
-export const lineHeight = style({
-  prop: "lineHeight",
-  cssProperty: "lineHeight",
-  key: "lineHeights",
-  transformValue: n => n,
-  scale: [1.5, 1.5, 1.5, 1.4, 1.2, 1.1, 1, 1, 0.9],
-});
 
 export interface Level {
   level?: 0 | 1;

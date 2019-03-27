@@ -44,4 +44,4 @@ Text.defaultProps = {
   textSize: 1,
 };
 
-export default Text;
+export { Text };

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {
+  borderRadius,
+  BorderRadiusProps,
   color,
   ColorProps,
   display,
@@ -21,7 +23,8 @@ const toShadow = (col: string): string =>
     .string();
 
 export interface InputProps
-  extends ColorProps,
+  extends BorderRadiusProps,
+    ColorProps,
     DisplayProps,
     FontSizeProps,
     FontWeightProps,
@@ -34,10 +37,10 @@ const Input = styled.input<InputProps>`
   flex-wrap: nowrap;
   align-items: center;
   border: none;
-  border-radius: 6px;
   height: 32px;
   box-shadow: ${({ theme }) => `${theme.shadows[0]}, ${theme.shadows[1]}`};
 
+  ${borderRadius};
   ${color};
   ${display};
   ${fontSize};
@@ -57,9 +60,10 @@ const Input = styled.input<InputProps>`
 `;
 
 Input.defaultProps = {
+  borderRadius: 1,
   fontWeight: 1,
   m: 0,
   px: 2,
 };
 
-export default Input;
+export { Input };

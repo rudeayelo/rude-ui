@@ -1,12 +1,13 @@
 import pkg from "./package.json";
 
 export default {
-  title: "rude-ui",
-  description: pkg.description,
-  version: pkg.version,
-  port: 4000,
-  typescript: true,
   codeSandbox: false,
+  description: pkg.description,
+  dest: "/dist",
+  port: 4000,
+  title: "rude-ui",
+  typescript: true,
+  version: pkg.version,
   wrapper: "docs/Docs.tsx",
   themeConfig: {
     styles: {

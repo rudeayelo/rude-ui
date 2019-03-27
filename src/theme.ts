@@ -1,5 +1,6 @@
 import c from "color";
 import * as styledComponents from "styled-components";
+const merge = require("deepmerge");
 
 const lightness = (color: string, amount: number): string =>
   c(color)
@@ -73,6 +74,8 @@ const paletteColors = {
 const aliasColors = {
   background: paletteColors.g["95"],
   accentBackground: "white",
+  primary: paletteColors.blue.base,
+  accent: paletteColors.green.base,
 };
 
 const colors = {
@@ -109,6 +112,8 @@ const textSizes = {
 
 const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
 
+const radii = [0, 6, 12, 16, 99];
+
 const buttons = {
   intent: {
     none: {
@@ -134,21 +139,21 @@ const buttons = {
   },
   appearance: {
     default: {
-      borderRadius: "99px",
+      borderRadius: `${radii[4]}px`,
       background: "linear-gradient(to top, currentColor -3000%, white 400%)",
       "&:hover": {
         background: "linear-gradient(to top, currentColor -2700%, white 700%)",
       },
     },
     primary: {
-      borderRadius: "99px",
+      borderRadius: `${radii[4]}px`,
       color: "hsla(0, 0%, 100%, .95)",
       "&:hover": {
         boxShadow: `${shadows[0]}, ${shadows[1]}`,
       },
     },
     minimal: {
-      borderRadius: "99px",
+      borderRadius: `${radii[4]}px`,
       "&:not(:hover)": {
         background: "none",
       },
@@ -190,6 +195,7 @@ const baseTheme = {
   fontWeights,
   levels,
   lineHeights,
+  radii,
   shadows,
   space,
   textSizes,
@@ -201,9 +207,9 @@ export type ThemedProps<P> = styledComponents.ThemedStyledProps<
   ThemeInterface
 >;
 
-export const createTheme = (theme: styledComponents.DefaultTheme) => ({
-  ...baseTheme,
-  ...theme,
-});
+const overwriteMerge = (destinationArray: [], sourceArray: [], options: {}) =>
+  sourceArray;
+const createTheme = (theme: styledComponents.DefaultTheme) =>
+  merge(baseTheme, theme, { arrayMerge: overwriteMerge });
 
-export default baseTheme;
+export { baseTheme, createTheme };
