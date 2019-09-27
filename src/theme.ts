@@ -1,6 +1,6 @@
 import c from "color";
-import * as styledComponents from "styled-components";
-const merge = require("deepmerge");
+import { DefaultTheme } from "styled-components";
+import merge from "deepmerge";
 
 const lightness = (color: string, amount: number): string =>
   c(color)
@@ -43,18 +43,6 @@ const paletteColors = {
     dark: darken(baseColors.green, 0.4),
     darkest: darken(baseColors.green, 0.6),
   },
-  g: {
-    "10": lightness(baseColors.grey, 10),
-    "20": lightness(baseColors.grey, 20),
-    "30": lightness(baseColors.grey, 30),
-    "40": lightness(baseColors.grey, 40),
-    "50": lightness(baseColors.grey, 50),
-    "60": lightness(baseColors.grey, 60),
-    "70": lightness(baseColors.grey, 70),
-    "80": lightness(baseColors.grey, 80),
-    "90": lightness(baseColors.grey, 90),
-    "95": lightness(baseColors.grey, 95),
-  },
   orange: {
     base: baseColors.orange,
     lightest: lighten(baseColors.orange, 0.6),
@@ -68,6 +56,18 @@ const paletteColors = {
     light: lighten(baseColors.red, 0.4),
     dark: darken(baseColors.red, 0.4),
     darkest: darken(baseColors.red, 0.6),
+  },
+  g: {
+    "10": lightness(baseColors.grey, 10),
+    "20": lightness(baseColors.grey, 20),
+    "30": lightness(baseColors.grey, 30),
+    "40": lightness(baseColors.grey, 40),
+    "50": lightness(baseColors.grey, 50),
+    "60": lightness(baseColors.grey, 60),
+    "70": lightness(baseColors.grey, 70),
+    "80": lightness(baseColors.grey, 80),
+    "90": lightness(baseColors.grey, 90),
+    "95": lightness(baseColors.grey, 95),
   },
 };
 
@@ -88,9 +88,9 @@ const lineHeights = [1.5, 1.5, 1.4, 1.3, 1.2, 1.1, 1, 1, 0.9];
 const fontWeights = [300, 400, 700];
 
 const shadows = [
-  "0 0 1px hsla(210, 0%, 10%, .05)",
-  "0 3px 6px hsla(210, 0%, 10%, .1)",
-  "0 10px 20px hsla(0, 0%, 0%, .1)",
+  "0 0 1px hsla(210, 0%, 10%, .1)",
+  "0 3px 6px hsla(210, 0%, 10%, .15)",
+  "0 10px 20px hsla(0, 0%, 0%, .20)",
 ];
 
 const levels = {
@@ -114,81 +114,10 @@ const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
 
 const radii = [0, 6, 12, 16, 99];
 
-const buttons = {
-  intent: {
-    none: {
-      color: paletteColors.g["30"],
-      background: paletteColors.g["30"],
-    },
-    default: {
-      color: paletteColors.blue.dark,
-      background: paletteColors.blue.dark,
-    },
-    success: {
-      color: paletteColors.green.base,
-      background: paletteColors.green.base,
-    },
-    danger: {
-      color: paletteColors.red.base,
-      background: paletteColors.red.base,
-    },
-    warning: {
-      color: paletteColors.orange.base,
-      background: paletteColors.orange.base,
-    },
-  },
-  appearance: {
-    default: {
-      borderRadius: `${radii[4]}px`,
-      background: "linear-gradient(to top, currentColor -3000%, white 400%)",
-      "&:hover": {
-        background: "linear-gradient(to top, currentColor -2700%, white 700%)",
-      },
-    },
-    primary: {
-      borderRadius: `${radii[4]}px`,
-      color: "hsla(0, 0%, 100%, .95)",
-      "&:hover": {
-        boxShadow: `${shadows[0]}, ${shadows[1]}`,
-      },
-    },
-    minimal: {
-      borderRadius: `${radii[4]}px`,
-      "&:not(:hover)": {
-        background: "none",
-      },
-      "&:hover": {
-        background: "linear-gradient(to top, currentColor -3000%, white 400%)",
-      },
-    },
-  },
-  size: {
-    small: {
-      paddingRight: space[3],
-      paddingLeft: space[3],
-      height: space[4],
-      fontSize: `${fontSizes[0]}px`,
-    },
-    medium: {
-      paddingRight: space[3],
-      paddingLeft: space[3],
-      height: space[5],
-      fontSize: `${fontSizes[1]}px`,
-    },
-    large: {
-      paddingRight: space[5],
-      paddingLeft: space[5],
-      height: space[6],
-      fontSize: `${fontSizes[2]}px`,
-    },
-  },
-};
-
 const fontFamily =
-  'ATCYara, "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+  '"SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
-const baseTheme = {
-  buttons,
+const baseTheme: DefaultTheme = {
   colors,
   fontFamily,
   fontSizes,
@@ -201,15 +130,10 @@ const baseTheme = {
   textSizes,
 };
 
-export type ThemeInterface = typeof baseTheme;
-export type ThemedProps<P> = styledComponents.ThemedStyledProps<
-  P,
-  ThemeInterface
->;
-
+// @ts-ignore
 const overwriteMerge = (destinationArray: [], sourceArray: [], options: {}) =>
   sourceArray;
-const createTheme = (theme: styledComponents.DefaultTheme) =>
+const createTheme = (theme: DefaultTheme): DefaultTheme =>
   merge(baseTheme, theme, { arrayMerge: overwriteMerge });
 
 export { baseTheme, createTheme };

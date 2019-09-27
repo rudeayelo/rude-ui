@@ -1,0 +1,62 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, number, text, select } from "@storybook/addon-knobs";
+import { Box } from "./Box";
+import { Text } from "../Text";
+
+export const defaultStyle = { border: "1px solid skyblue" };
+
+<Meta title="MDX|Box" component={Box} />
+
+# Box
+
+<Props of={Box} exclude="theme" />
+
+<Story name="Playground" decorators={[withKnobs]}>
+  <Box
+    style={defaultStyle}
+    display={select(
+      "Display",
+      {
+        block: "block",
+        "flex (although there's a Flex component for this use case)": "flex",
+        "inline-flex": "inline-flex",
+        inline: "inline",
+        "inline-block": "inline-block",
+        table: "table",
+        none: null,
+      },
+      null,
+    )}
+    position={select(
+      "Position",
+      {
+        absolute: "absolute",
+        fixed: "fixed",
+        relative: "relative",
+        static: "static",
+        none: null,
+      },
+      null,
+    )}
+    top={number("Top", null)}
+    right={number("Right", null)}
+    bottom={number("Bottom", null)}
+    left={number("Left", null)}
+    width={number("Width", null, { min: 0 })}
+    maxWidth={number("Max width", null, { min: 0 })}
+    height={number("Height", null, { min: 0 })}
+    maxHeight={number("Max height", null, { min: 0 })}
+    p={number("Padding", null, { min: 0, step: 1 })}
+    pt={number("Padding top", null, { min: 0, step: 1 })}
+    pr={number("Padding right", null, { min: 0, step: 1 })}
+    pb={number("Padding bottom", null, { min: 0, step: 1 })}
+    pl={number("Padding left", null, { min: 0, step: 1 })}
+    m={number("Margin", null, { min: 0, step: 1 })}
+    mt={number("Margin top", null, { step: 1 })}
+    mr={number("Margin right", null, { step: 1 })}
+    mb={number("Margin bottom", null, { step: 1 })}
+    ml={number("Margin left", null, { step: 1 })}
+  >
+    <Text>{text("Text", "Just a plain and simple box")}</Text>
+  </Box>
+</Story>

@@ -1,10 +1,11 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme, StyledProps } from "styled-components";
 import styledMap from "styled-map";
-import { Text } from "..";
+import { Text } from "../Text";
 import { space, SpaceProps, variant } from "styled-system";
+import { themeGet } from "@styled-system/theme-get";
 import { ClassName, Intent } from "../types";
-import { ThemedProps } from "../theme";
+import { baseTheme } from "../theme";
 
 type Appearance = "default" | "primary" | "minimal";
 type Color = string;
@@ -18,6 +19,7 @@ export interface ButtonProps extends SpaceProps, ClassName {
   intent?: Intent;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   size?: Size;
+  theme?: DefaultTheme;
 }
 
 interface IconProps {
@@ -26,24 +28,85 @@ interface IconProps {
 }
 
 const appearance = variant({
-  key: "buttons.appearance",
   prop: "appearance",
+  variants: {
+    default: {
+      background: "linear-gradient(to top, currentColor -3000%, white 400%)",
+      "&:hover": {
+        background: "linear-gradient(to top, currentColor -2700%, white 700%)",
+      },
+    },
+    primary: {
+      color: "hsla(0, 0%, 100%, .95)",
+      "&:hover": {
+        boxShadow: `${baseTheme.shadows[0]}, ${baseTheme.shadows[1]}`,
+      },
+    },
+    minimal: {
+      "&:not(:hover)": {
+        background: "none",
+      },
+      "&:hover": {
+        background: "linear-gradient(to top, currentColor -3000%, white 400%)",
+      },
+    },
+  },
 });
 
 const intent = variant({
-  key: "buttons.intent",
   prop: "intent",
+  variants: {
+    none: {
+      color: "g.30",
+      backgroundColor: "g.30",
+    },
+    default: {
+      color: "blue.dark",
+      backgroundColor: "blue.dark",
+    },
+    success: {
+      color: "green.base",
+      backgroundColor: "green.base",
+    },
+    danger: {
+      color: "red.base",
+      backgroundColor: "red.base",
+    },
+    warning: {
+      color: "orange.base",
+      backgroundColor: "orange.base",
+    },
+  },
 });
 
 const size = variant({
-  key: "buttons.size",
   prop: "size",
+  variants: {
+    small: {
+      paddingRight: 3,
+      paddingLeft: 3,
+      height: 24,
+      fontSize: 0,
+    },
+    medium: {
+      paddingRight: 3,
+      paddingLeft: 3,
+      height: 32,
+      fontSize: 1,
+    },
+    large: {
+      paddingRight: 5,
+      paddingLeft: 5,
+      height: 48,
+      fontSize: 2,
+    },
+  },
 });
 
 const iconSize = styledMap("size", {
   large: "20px",
-  medium: "18px",
-  small: "14px",
+  medium: "14px",
+  small: "12px",
 });
 
 const iconMargin = styledMap("size", {
@@ -56,7 +119,7 @@ const iconStyles = css`
   display: inline-flex;
   align-items: center;
   width: ${iconSize};
-  color: ${({ color }: ThemedProps<IconProps>) => color};
+  color: ${({ color }: StyledProps<IconProps>) => color};
 
   & > * {
     flex: 1;
@@ -83,6 +146,7 @@ const ButtonStyled = styled.button`
   align-items: center;
   cursor: pointer;
   border: none;
+  border-radius: ${themeGet("radii.4")}px;
 
   ${intent};
   ${size};
@@ -106,10 +170,12 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
     )}
   </ButtonStyled>
 );
+
 Button.defaultProps = {
   appearance: "default",
   intent: "default",
   size: "medium",
+  theme: baseTheme,
 };
 
 export { Button };

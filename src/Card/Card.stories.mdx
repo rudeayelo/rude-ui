@@ -1,0 +1,43 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, number, text } from "@storybook/addon-knobs";
+import { Flex } from "../Flex";
+import { Text } from "../Text";
+import { Card } from "./Card";
+
+<Meta title="MDX|Card" component={Card} />
+
+# Card
+
+<Props of={Card} exclude="theme" />
+
+## Level
+
+<Preview>
+  <Story name="Level">
+    <Flex>
+      <Card level={0}>
+        <Text p={4}>Level 0</Text>
+      </Card>
+      <Card ml={4}>
+        <Text p={4}>Level 1 (default)</Text>
+      </Card>
+    </Flex>
+  </Story>
+</Preview>
+
+<Story name="Playground" decorators={[withKnobs]}>
+  <Card
+    level={number("Level", 1, {
+      min: 0,
+      max: 1,
+      step: 1,
+    })}
+  >
+    <Text p={4}>
+      {text(
+        "Text",
+        "I love deadlines. I love the whooshing noise they make as they go by.",
+      )}
+    </Text>
+  </Card>
+</Story>

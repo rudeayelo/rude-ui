@@ -1,0 +1,323 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, radios, text } from "@storybook/addon-knobs";
+import { baseTheme } from "../theme";
+import {
+  EmailIcon,
+  DeleteIcon,
+  MenuIcon,
+  ExpandBottomIcon,
+  RefreshIcon,
+} from "../../helpers/icons";
+import { Flex } from "../Flex";
+import { Text } from "../Text";
+import { Button } from "./Button";
+import { IconButton } from "../IconButton";
+
+<Meta title="MDX|Button" component={Button} />
+
+# Button
+
+<Props of={Button} exclude="theme" />
+
+## Appearances
+
+<Preview>
+  <Story name="Appearance">
+    <Flex>
+      <Button>Default</Button>
+      <Button appearance="primary" ml={3}>
+        Primary
+      </Button>
+      <Button appearance="minimal" ml={3}>
+        Minimal
+      </Button>
+    </Flex>
+  </Story>
+</Preview>
+
+## Size
+
+<Preview>
+  <Story name="Size">
+    <Flex>
+      <Button size="large">Large</Button>
+      <Button ml={3}>Default</Button>
+      <Button size="small" ml={3}>
+        Small
+      </Button>
+    </Flex>
+  </Story>
+</Preview>
+
+## Intent
+
+<Preview>
+  <Story name="Intent">
+    <Flex>
+      <Button>Default</Button>
+      <Button intent="none" ml={3}>
+        None
+      </Button>
+      <Button intent="success" ml={3}>
+        Success
+      </Button>
+      <Button intent="danger" ml={3}>
+        Danger
+      </Button>
+      <Button intent="warning" ml={3}>
+        Warning
+      </Button>
+    </Flex>
+  </Story>
+</Preview>
+
+## Mixing appearance and intent
+
+<Preview>
+  <Story name="Appearance + intent">
+    <>
+      <Flex>
+        <Button appearance="primary">Default</Button>
+        <Button appearance="primary" intent="none" ml={3}>
+          None
+        </Button>
+        <Button appearance="primary" intent="success" ml={3}>
+          Success
+        </Button>
+        <Button appearance="primary" intent="danger" ml={3}>
+          Danger
+        </Button>
+        <Button appearance="primary" intent="warning" ml={3}>
+          Warning
+        </Button>
+      </Flex>
+      <Flex mt={4}>
+        <Button appearance="minimal">Default</Button>
+        <Button appearance="minimal" intent="none" ml={3}>
+          None
+        </Button>
+        <Button appearance="minimal" intent="success" ml={3}>
+          Success
+        </Button>
+        <Button appearance="minimal" intent="danger" ml={3}>
+          Danger
+        </Button>
+        <Button appearance="minimal" intent="warning" ml={3}>
+          Warning
+        </Button>
+      </Flex>
+    </>
+  </Story>
+</Preview>
+
+## With icons
+
+<Preview>
+  <Story name="With icons">
+    <>
+      <Flex>
+        <Button iconAfter={<EmailIcon />} size="large">
+          Send
+        </Button>
+        <Button iconAfter={<EmailIcon />} ml={3}>
+          Send
+        </Button>
+        <Button iconAfter={<EmailIcon />} ml={3} size="small">
+          Send
+        </Button>
+        <Button iconBefore={<DeleteIcon />} intent="danger" ml={4} size="large">
+          Delete
+        </Button>
+        <Button iconBefore={<DeleteIcon />} intent="danger" ml={3}>
+          Delete
+        </Button>
+        <Button iconBefore={<DeleteIcon />} intent="danger" ml={3} size="small">
+          Delete
+        </Button>
+      </Flex>
+      <Flex mt={4}>
+        <Button
+          iconBefore={<MenuIcon />}
+          iconColor={baseTheme.colors.blue.light}
+          size="large"
+        >
+          Menu
+        </Button>
+        <Button
+          iconBefore={<MenuIcon />}
+          iconColor={baseTheme.colors.blue.light}
+          ml={3}
+        >
+          Menu
+        </Button>
+        <Button
+          iconBefore={<MenuIcon />}
+          iconColor={baseTheme.colors.blue.light}
+          ml={3}
+          size="small"
+        >
+          Menu
+        </Button>
+        <Button
+          iconBefore={<MenuIcon />}
+          appearance="primary"
+          ml={4}
+          size="large"
+        >
+          Menu
+        </Button>
+        <Button iconBefore={<MenuIcon />} appearance="primary" ml={3}>
+          Menu
+        </Button>
+        <Button
+          iconBefore={<MenuIcon />}
+          appearance="primary"
+          ml={3}
+          size="small"
+        >
+          Menu
+        </Button>
+      </Flex>
+      <Flex mt={4}>
+        <Button iconAfter={<ExpandBottomIcon />} appearance="minimal">
+          Select
+        </Button>
+        <Button
+          iconBefore={<RefreshIcon />}
+          iconColor={baseTheme.colors.blue.base}
+          ml={3}
+          size="small"
+          appearance="minimal"
+          intent="none"
+        >
+          Refresh
+        </Button>
+      </Flex>
+    </>
+  </Story>
+</Preview>
+
+## Icon only
+
+<Preview>
+  <Story name="Icon only">
+    <Flex>
+      <IconButton icon={<MenuIcon />} />
+      <IconButton
+        icon={<DeleteIcon />}
+        appearance="minimal"
+        intent="danger"
+        ml={4}
+      />
+      <IconButton icon={<EmailIcon />} appearance="primary" ml={4} />
+    </Flex>
+  </Story>
+</Preview>
+
+<Story name="Playground" decorators={[withKnobs]}>
+  <Flex>
+    <Button
+      intent={radios(
+        "intent",
+        {
+          default: "default",
+          none: "none",
+          success: "success",
+          danger: "danger",
+          warning: "warning",
+        },
+        "default",
+      )}
+      size={radios(
+        "size",
+        {
+          small: "small",
+          medium: "medium",
+          large: "large",
+        },
+        "medium",
+      )}
+      appearance={radios(
+        "appearance",
+        {
+          default: "default",
+          primary: "primary",
+          minimal: "minimal",
+        },
+        "default",
+      )}
+    >
+      {text("Text", "Delete")}
+    </Button>
+    <Button
+      iconBefore={<DeleteIcon />}
+      ml={4}
+      intent={radios(
+        "intent",
+        {
+          default: "default",
+          none: "none",
+          success: "success",
+          danger: "danger",
+          warning: "warning",
+        },
+        "default",
+      )}
+      size={radios(
+        "size",
+        {
+          small: "small",
+          medium: "medium",
+          large: "large",
+        },
+        "medium",
+      )}
+      appearance={radios(
+        "appearance",
+        {
+          default: "default",
+          primary: "primary",
+          minimal: "minimal",
+        },
+        "default",
+      )}
+    >
+      {text("Text", "Delete")}
+    </Button>
+    <Button
+      iconAfter={<DeleteIcon />}
+      ml={4}
+      intent={radios(
+        "intent",
+        {
+          default: "default",
+          none: "none",
+          success: "success",
+          danger: "danger",
+          warning: "warning",
+        },
+        "default",
+      )}
+      size={radios(
+        "size",
+        {
+          small: "small",
+          medium: "medium",
+          large: "large",
+        },
+        "medium",
+      )}
+      appearance={radios(
+        "appearance",
+        {
+          default: "default",
+          primary: "primary",
+          minimal: "minimal",
+        },
+        "default",
+      )}
+    >
+      {text("Text", "Delete")}
+    </Button>
+  </Flex>
+</Story>

@@ -14,10 +14,11 @@ import {
   SpaceProps,
 } from "styled-system";
 import c from "color";
+import { baseTheme } from "../theme";
 import { ClassName } from "../types";
 
-const toShadow = (col: string): string =>
-  c(col)
+const toShadow = (color: string): string =>
+  c(color)
     .alpha(0.2)
     .hsl()
     .string();
@@ -62,8 +63,10 @@ const Input = styled.input<InputProps>`
 Input.defaultProps = {
   borderRadius: 1,
   fontWeight: 1,
+  fontSize: 2,
   m: 0,
   px: 2,
+  theme: baseTheme,
 };
 
 export { Input };

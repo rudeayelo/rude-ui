@@ -4,26 +4,22 @@ import {
   ColorProps,
   display,
   DisplayProps,
-  fontSize,
-  FontSizeProps,
-  fontWeight,
-  FontWeightProps,
-  lineHeight,
-  LineHeightProps,
   space,
   SpaceProps,
+  typography,
+  TypographyProps,
 } from "styled-system";
 import { textSize, TextSize } from "../variants";
+import { baseTheme } from "../theme";
+
 import { ClassName } from "../types";
 
 export interface TextProps
   extends ColorProps,
     DisplayProps,
-    FontSizeProps,
-    FontWeightProps,
-    LineHeightProps,
     SpaceProps,
     TextSize,
+    TypographyProps,
     ClassName {}
 
 const Text = styled.div<TextProps>`
@@ -34,14 +30,12 @@ const Text = styled.div<TextProps>`
 
   ${color};
   ${display};
-  ${fontSize};
-  ${fontWeight};
-  ${lineHeight};
+  ${typography};
   ${space};
 `;
 
 Text.defaultProps = {
-  textSize: 1,
+  theme: baseTheme,
 };
 
 export { Text };
