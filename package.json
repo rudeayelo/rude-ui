@@ -29,7 +29,7 @@
     "postrelease": "run-s release:*",
     "release:tags": "git push --follow-tags origin master",
     "release:github": "export $(cat .env | xargs) && conventional-github-releaser -p angular",
-    "prepublishOnly": "run-s lint build:components"
+    "prepublishOnly": "run-s build:components"
   },
   "husky": {
     "hooks": {
