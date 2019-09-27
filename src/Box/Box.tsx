@@ -1,68 +1,36 @@
 import {
-  alignItems,
-  AlignItemsProps,
   alignSelf,
   AlignSelfProps,
-  display,
-  DisplayProps,
   flex,
-  flexDirection,
-  FlexDirectionProps,
   FlexProps,
-  height,
-  HeightProps,
-  justifyContent,
-  JustifyContentProps,
-  maxWidth,
-  MaxWidthProps,
-  minWidth,
-  MinWidthProps,
+  layout,
+  LayoutProps,
   order,
   OrderProps,
   position,
   PositionProps,
   space,
   SpaceProps,
-  width,
-  WidthProps,
 } from "styled-system";
 import styled from "styled-components";
 import { ClassName } from "../types";
 
 export interface BoxProps
   extends AlignSelfProps,
-    AlignItemsProps,
-    DisplayProps,
     FlexProps,
-    FlexDirectionProps,
-    HeightProps,
-    JustifyContentProps,
-    MinWidthProps,
-    MaxWidthProps,
-    PositionProps,
+    LayoutProps,
     OrderProps,
+    PositionProps,
     SpaceProps,
-    WidthProps,
     ClassName {}
 
 const Box = styled.div<BoxProps>`
-  ${alignItems}
   ${alignSelf}
-  ${display}
   ${flex}
-  ${flexDirection}
-  ${height}
-  ${justifyContent}
-  ${minWidth}
-  ${maxWidth}
-  ${position}
+  ${layout}
   ${order}
+  ${position}
   ${space}
-  ${width}
 `;
-
-Box.defaultProps = {
-  display: "flex",
-};
 
 export { Box };

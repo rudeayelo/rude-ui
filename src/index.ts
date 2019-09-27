@@ -1,7 +1,7 @@
-export { Box } from "./Box";
-export { Button } from "./Button";
-export { Card } from "./Card";
-export { IconButton } from "./IconButton";
-export { Input } from "./Input";
-export { Text } from "./Text";
-export { baseTheme, createTheme } from "./theme";
+export * from "./Box";
+export * from "./Button";
+export * from "./Card";
+export * from "./Flex";
+export * from "./IconButton";
+export * from "./Input";
+export * from "./Text";
