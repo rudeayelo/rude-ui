@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.1](https://github.com/rudeayelo/rude-ui/compare/v0.10.0...v0.10.1) (2019-09-27)
+
+
+### Bug Fixes
+
+* fix prepublishOnly script to avoid a lint failure ([e3644b6](https://github.com/rudeayelo/rude-ui/commit/e3644b6))
+* fix theme exporting ([b1446bd](https://github.com/rudeayelo/rude-ui/commit/b1446bd))
+
 ## [0.10.0](https://github.com/rudeayelo/rude-ui/compare/v0.9.0...v0.10.0) (2019-09-27)
 
 
