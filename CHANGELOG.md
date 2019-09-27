@@ -1,6 +1,16 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.10.0](https://github.com/rudeayelo/rude-ui/compare/v0.9.0...v0.10.0) (2019-09-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* The build is now handled by tsdx instead of a unique Rollup config. Dropped Docz in
+favour of Storybook. Some api changes.
+
+* simplify the build process and switch to Storybook ([e43707b](https://github.com/rudeayelo/rude-ui/commit/e43707b))
 
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/rudeayelo/rude-ui/compare/v0.8.1...v0.9.0) (2019-03-27)
