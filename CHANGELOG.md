@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.3](https://github.com/rudeayelo/rude-ui/compare/v0.10.2...v0.10.3) (2019-09-29)
+
+
+### Bug Fixes
+
+* `color` and `styled-map` dependencies ([258a90e](https://github.com/rudeayelo/rude-ui/commit/258a90e))
+
 ### [0.10.2](https://github.com/rudeayelo/rude-ui/compare/v0.10.1...v0.10.2) (2019-09-29)
 
 ### [0.10.1](https://github.com/rudeayelo/rude-ui/compare/v0.10.0...v0.10.1) (2019-09-27)
