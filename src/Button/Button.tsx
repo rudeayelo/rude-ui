@@ -3,7 +3,6 @@ import styled, { css, DefaultTheme, StyledProps } from "styled-components";
 import styledMap from "styled-map";
 import { Text } from "../Text";
 import { space, SpaceProps, variant } from "styled-system";
-import { themeGet } from "@styled-system/theme-get";
 import { ClassName, Intent } from "../types";
 import { baseTheme } from "../theme";
 
@@ -146,7 +145,7 @@ const ButtonStyled = styled.button`
   align-items: center;
   cursor: pointer;
   border: none;
-  border-radius: ${themeGet("radii.4")}px;
+  border-radius: ${({theme}) => theme.radii[4]}px;
 
   ${intent};
   ${size};
