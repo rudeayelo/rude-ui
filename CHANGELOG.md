@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.4](https://github.com/rudeayelo/rude-ui/compare/v0.10.3...v0.10.4) (2019-10-09)
+
+
+### Features
+
+* add a default `textSize` to `Text` component ([7f4b8d4](https://github.com/rudeayelo/rude-ui/commit/7f4b8d4))
+
 ### [0.10.3](https://github.com/rudeayelo/rude-ui/compare/v0.10.2...v0.10.3) (2019-09-29)
 
 
