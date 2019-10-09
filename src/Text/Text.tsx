@@ -35,7 +35,6 @@ const Text = styled.div<TextProps>`
 `;
 
 Text.defaultProps = {
-  textSize: 2,
   theme: baseTheme,
 };
 
