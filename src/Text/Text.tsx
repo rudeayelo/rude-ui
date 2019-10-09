@@ -9,7 +9,7 @@ import {
   typography,
   TypographyProps,
 } from "styled-system";
-import { textSize, TextSize } from "../variants";
+import { textSize, TextSizeProps } from "../variants";
 import { baseTheme } from "../theme";
 
 import { ClassName } from "../types";
@@ -18,7 +18,7 @@ export interface TextProps
   extends ColorProps,
     DisplayProps,
     SpaceProps,
-    TextSize,
+    TextSizeProps,
     TypographyProps,
     ClassName {}
 
@@ -35,6 +35,7 @@ const Text = styled.div<TextProps>`
 `;
 
 Text.defaultProps = {
+  textSize: 2,
   theme: baseTheme,
 };
 

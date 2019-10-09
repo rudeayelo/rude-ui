@@ -1,6 +1,6 @@
 import { variant } from "styled-system";
 
-export interface Level {
+export interface LevelProps {
   level?: 0 | 1;
 }
 export const level = variant({
@@ -8,7 +8,7 @@ export const level = variant({
   prop: "level",
 });
 
-export interface TextSize {
+export interface TextSizeProps {
   textSize?: number;
 }
 export const textSize = variant({
