@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.7](https://github.com/rudeayelo/rude-ui/compare/v0.10.6...v0.10.7) (2020-03-23)
+
+
+### Features
+
+* big bunch of updates ([2179b6c](https://github.com/rudeayelo/rude-ui/commit/2179b6c8cb77615e1442dd39fdfb42bab135fcb6))
+
 ### [0.10.6](https://github.com/rudeayelo/rude-ui/compare/v0.10.5...v0.10.6) (2019-10-09)
 
 
