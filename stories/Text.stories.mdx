@@ -1,7 +1,8 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, number, text, select } from "@storybook/addon-knobs";
-import { Box } from "../Box";
-import { Text } from "./Text";
+import { withKnobs, text } from "@storybook/addon-knobs/react";
+import { colorKnobProps, typographyKnobProps } from "../helpers/storybook-knob-props";
+import { Box } from "../src/Box";
+import { Text } from "../src/Text";
 
 <Meta title="MDX|Text" component={Text} />
 
@@ -14,14 +15,14 @@ import { Text } from "./Text";
 <Preview>
   <Story name="Size">
     <>
-      <Text textSize={8}>Hello world</Text>
-      <Text textSize={7}>Hello world</Text>
-      <Text textSize={6}>Hello world</Text>
-      <Text textSize={5}>Hello world</Text>
-      <Text textSize={4}>Hello world</Text>
-      <Text textSize={3}>Hello world</Text>
-      <Text textSize={2}>Hello world</Text>
-      <Text textSize={1}>Hello world</Text>
+      <Text textSize={8} mb={4}>Hello world</Text>
+      <Text textSize={7} mb={4}>Hello world</Text>
+      <Text textSize={6} mb={4}>Hello world</Text>
+      <Text textSize={5} mb={4}>Hello world</Text>
+      <Text textSize={4} mb={4}>Hello world</Text>
+      <Text textSize={3} mb={4}>Hello world</Text>
+      <Text textSize={2} mb={4}>Hello world</Text>
+      <Text textSize={1} mb={4}>Hello world</Text>
       <Text textSize={0}>Hello world</Text>
     </>
   </Story>
@@ -32,13 +33,8 @@ import { Text } from "./Text";
 <Preview>
   <Story name="Weights">
     <>
-      <Text textSize={4} fontWeight={2}>
-        Bold weight (2)
-      </Text>
-      <Text textSize={4}>Default weight (1)</Text>
-      <Text textSize={4} fontWeight={0}>
-        Thin weight (0)
-      </Text>
+      <Text textSize={4} fontWeight={1}>Bold weight</Text>
+      <Text textSize={4}>Normal weight (default)</Text>
     </>
   </Story>
 </Preview>
@@ -154,13 +150,13 @@ import { Text } from "./Text";
 <Preview>
   <Story name="Paragraphs">
     <Box>
-      <Text as="p" textSize={8} mb={4} fontWeight="bold">
+      <Text as="p" textSize={8} mb={4} fontWeight={1}>
         Whenever I feel the need to exercise, I lie down until it goes away.
       </Text>
       <Text as="p" textSize={7} mb={4}>
         I love deadlines. I love the whooshing noise they make as they go by.
       </Text>
-      <Text as="p" textSize={6} mb={4} fontWeight="bold">
+      <Text as="p" textSize={6} mb={4} fontWeight={1}>
         Love is that condition in which the happiness of another person is
         essential to your own.
       </Text>
@@ -208,54 +204,10 @@ import { Text } from "./Text";
   </Story>
 </Preview>
 
-<Story name="Playground" decorators={[withKnobs]}>
+<Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
   <Text
-    textSize={number("Size", 0, {
-      min: 0,
-      max: 8,
-      step: 1,
-    })}
-    fontWeight={number("Weight", 1, {
-      min: 0,
-      max: 2,
-      step: 1,
-    })}
-    color={select(
-      "Color",
-      {
-        "blue.base": "blue.base",
-        "blue.lightest": "blue.lightest",
-        "blue.light": "blue.light",
-        "blue.dark": "blue.dark",
-        "blue.darkest": "blue.darkest",
-        "green.base": "green.base",
-        "green.lightest": "green.lightest",
-        "green.light": "green.light",
-        "green.dark": "green.dark",
-        "green.darkest": "green.darkest",
-        "orange.base": "orange.base",
-        "orange.lightest": "orange.lightest",
-        "orange.light": "orange.light",
-        "orange.dark": "orange.dark",
-        "orange.darkest": "orange.darkest",
-        "red.base": "red.base",
-        "red.lightest": "red.lightest",
-        "red.light": "red.light",
-        "red.dark": "red.dark",
-        "red.darkest": "red.darkest",
-        "g.10": "g.10",
-        "g.20": "g.20",
-        "g.30": "g.30",
-        "g.40": "g.40",
-        "g.50": "g.50",
-        "g.60": "g.60",
-        "g.70": "g.70",
-        "g.80": "g.80",
-        "g.90": "g.90",
-        "g.95": "g.95",
-      },
-      "g.10",
-    )}
+    {...colorKnobProps({})}
+    {...typographyKnobProps({ defaultTextSize: 2 })}
   >
     {text(
       "Text",

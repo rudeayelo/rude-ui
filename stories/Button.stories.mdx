@@ -1,17 +1,13 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, radios, text } from "@storybook/addon-knobs";
-import { baseTheme } from "../theme";
 import {
   EmailIcon,
   DeleteIcon,
   MenuIcon,
   ExpandBottomIcon,
   RefreshIcon,
-} from "../../helpers/icons";
-import { Flex } from "../Flex";
-import { Text } from "../Text";
-import { Button } from "./Button";
-import { IconButton } from "../IconButton";
+} from "../helpers/icons";
+import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Meta title="MDX|Button" component={Button} />
 
@@ -138,21 +134,18 @@ import { IconButton } from "../IconButton";
       <Flex mt={4}>
         <Button
           iconBefore={<MenuIcon />}
-          iconColor={baseTheme.colors.blue.light}
           size="large"
         >
           Menu
         </Button>
         <Button
           iconBefore={<MenuIcon />}
-          iconColor={baseTheme.colors.blue.light}
           ml={3}
         >
           Menu
         </Button>
         <Button
           iconBefore={<MenuIcon />}
-          iconColor={baseTheme.colors.blue.light}
           ml={3}
           size="small"
         >
@@ -202,19 +195,24 @@ import { IconButton } from "../IconButton";
 <Preview>
   <Story name="Icon only">
     <Flex>
-      <IconButton icon={<MenuIcon />} />
+      <IconButton>
+        <MenuIcon />
+      </IconButton>
       <IconButton
-        icon={<DeleteIcon />}
         appearance="minimal"
         intent="danger"
         ml={4}
-      />
-      <IconButton icon={<EmailIcon />} appearance="primary" ml={4} />
+      >
+        <DeleteIcon />
+      </IconButton>
+      <IconButton appearance="primary" ml={4}>
+        <EmailIcon />
+      </IconButton>
     </Flex>
   </Story>
 </Preview>
 
-<Story name="Playground" decorators={[withKnobs]}>
+<Story name="Playground" decorators={[withKnobs]}  parameters={{ docs: { disable: true } }}>
   <Flex>
     <Button
       intent={radios(

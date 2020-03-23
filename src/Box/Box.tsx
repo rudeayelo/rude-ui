@@ -1,36 +1,58 @@
+import styled from "styled-components";
 import {
-  alignSelf,
-  AlignSelfProps,
-  flex,
-  FlexProps,
+  compose,
+  background,
+  BackgroundProps,
+  border,
+  BorderProps,
+  color,
+  ColorProps,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
   layout,
   LayoutProps,
-  order,
-  OrderProps,
   position,
   PositionProps,
+  shadow,
+  ShadowProps,
   space,
   SpaceProps,
+  typography,
+  TypographyProps,
 } from "styled-system";
-import styled from "styled-components";
+import { baseTheme } from "../theme";
 import { ClassName } from "../types";
 
 export interface BoxProps
-  extends AlignSelfProps,
-    FlexProps,
+  extends BackgroundProps,
+    BorderProps,
+    ColorProps,
+    FlexboxProps,
+    GridProps,
     LayoutProps,
-    OrderProps,
     PositionProps,
+    ShadowProps,
     SpaceProps,
+    TypographyProps,
     ClassName {}
 
-const Box = styled.div<BoxProps>`
-  ${alignSelf}
-  ${flex}
-  ${layout}
-  ${order}
-  ${position}
-  ${space}
-`;
+const boxProps = compose(
+  background,
+  border,
+  color,
+  flexbox,
+  grid,
+  layout,
+  position,
+  shadow,
+  space,
+  typography,
+);
 
-export { Box };
+export const Box = styled("div")<BoxProps>(boxProps);
+
+Box.defaultProps = {
+  theme: baseTheme,
+};

@@ -1,23 +1,15 @@
 import styled from "styled-components";
-import { borderRadius, BorderRadiusProps } from "styled-system";
-import { baseTheme } from "../theme";
 import { level, LevelProps } from "../variants";
 import { Box, BoxProps } from "../Box";
 
-export interface CardProps extends BorderRadiusProps, BoxProps, LevelProps {}
+export interface CardProps extends BoxProps, LevelProps {}
 
-const Card = styled(Box)<CardProps>`
-  background: ${({ theme }) => theme.colors.accentBackground};
-
-  ${borderRadius}
+export const Card = styled(Box)<CardProps>`
   ${level}
 `;
 
 Card.defaultProps = {
-  borderRadius: 3,
-  display: "block",
+  bg: "accentBackground",
+  borderRadius: 1,
   level: 1,
-  theme: baseTheme,
 };
-
-export { Card };

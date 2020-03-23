@@ -76,6 +76,8 @@ const aliasColors = {
   accentBackground: "white",
   primary: paletteColors.blue.base,
   accent: paletteColors.green.base,
+  primaryText: paletteColors.g["10"],
+  secondaryText: paletteColors.g["50"],
 };
 
 const colors = {
@@ -85,17 +87,22 @@ const colors = {
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72];
 const lineHeights = [1.5, 1.5, 1.4, 1.3, 1.2, 1.1, 1, 1, 0.9];
-const fontWeights = [300, 400, 700];
+const fontWeights = [400, 700];
 
 const shadows = [
-  "0 0 1px hsla(210, 0%, 10%, .1)",
+  "none",
+  "0 0 1px hsla(210, 0%, 10%, .25)",
   "0 3px 6px hsla(210, 0%, 10%, .15)",
-  "0 10px 20px hsla(0, 0%, 0%, .20)",
+  "0 10px 20px hsla(0, 0%, 0%, .15)",
 ];
 
+// @ts-ignore
+shadows.input = "0 0 1px hsla(210, 0%, 10%, .90)";
+
 const levels = {
-  "0": { boxShadow: `${shadows[0]}, ${shadows[1]}` },
-  "1": { boxShadow: `${shadows[0]}, ${shadows[2]}` },
+  "0": { boxShadow: `${shadows[1]}, ${shadows[1]}` },
+  "1": { boxShadow: `${shadows[1]}, ${shadows[2]}` },
+  "2": { boxShadow: `${shadows[1]}, ${shadows[3]}` },
 };
 
 const textSizes = {
@@ -112,10 +119,10 @@ const textSizes = {
 
 const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
 
-const radii = [0, 6, 12, 16, 99];
+const radii = [0, 3, 6, 12, 16, 99];
 
 const fontFamily =
-  '"SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+  '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
 const baseTheme: DefaultTheme = {
   colors,

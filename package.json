@@ -38,7 +38,7 @@
     }
   },
   "lint-staged": {
-    "*.{mdx,ts,tsx}": [
+    "*.{ts,tsx}": [
       "tsdx lint",
       "git add"
     ]

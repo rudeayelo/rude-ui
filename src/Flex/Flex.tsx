@@ -1,13 +1,10 @@
-import { flexbox, FlexboxProps } from "styled-system";
 import styled from "styled-components";
 import { Box, BoxProps } from "../Box";
 
-export interface FlexProps extends BoxProps, FlexboxProps {}
+export interface FlexProps extends BoxProps {}
 
-const Flex = styled(Box).attrs({
+export const Flex = styled(Box)<FlexProps>({});
+
+Flex.defaultProps = {
   display: "flex",
-})<FlexProps>`
-  ${flexbox}
-`;
-
-export { Flex };
+};

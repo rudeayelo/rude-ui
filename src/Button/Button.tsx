@@ -11,12 +11,18 @@ type Color = string;
 type Size = "small" | "medium" | "large";
 
 export interface ButtonProps extends SpaceProps, ClassName {
+  /** Variant for the main aspect of the button <"default" | "primary" | "minimal"> */
   appearance?: Appearance;
+  /** Icon to show after the text inside the button */
   iconAfter?: React.ReactNode;
+  /** Icon to show before the text inside the button */
   iconBefore?: React.ReactNode;
+  /** Color of the icon */
   iconColor?: Color;
+  /** Specifies the color for the button */
   intent?: Intent;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** Text/spacing size <"small" | "medium" | "large"> */
   size?: Size;
   theme?: DefaultTheme;
 }
@@ -82,9 +88,9 @@ const size = variant({
   prop: "size",
   variants: {
     small: {
-      paddingRight: 3,
-      paddingLeft: 3,
-      height: 24,
+      paddingRight: 2,
+      paddingLeft: 2,
+      height: 26,
       fontSize: 0,
     },
     medium: {
@@ -94,8 +100,8 @@ const size = variant({
       fontSize: 1,
     },
     large: {
-      paddingRight: 5,
-      paddingLeft: 5,
+      paddingRight: 4,
+      paddingLeft: 4,
       height: 48,
       fontSize: 2,
     },
@@ -103,7 +109,7 @@ const size = variant({
 });
 
 const iconSize = styledMap("size", {
-  large: "20px",
+  large: "18px",
   medium: "14px",
   small: "12px",
 });
@@ -145,7 +151,7 @@ const ButtonStyled = styled.button`
   align-items: center;
   cursor: pointer;
   border: none;
-  border-radius: ${({theme}) => theme.radii[4]}px;
+  border-radius: ${({ theme }) => theme.radii[1]}px;
 
   ${intent};
   ${size};

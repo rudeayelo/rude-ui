@@ -1,0 +1,25 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text } from "@storybook/addon-knobs";
+import {
+  colorKnobProps,
+  typographyKnobProps,
+  spaceKnobProps,
+  radiiKnobProps,
+} from "../helpers/storybook-knob-props";
+import { Input, Text } from "../src";
+
+<Meta title="MDX|Input" component={Input} />
+
+# Input
+
+<Props of={Input} exclude="theme" />
+
+<Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
+  <Input
+    {...colorKnobProps({})}
+    {...typographyKnobProps({})}
+    {...spaceKnobProps()}
+    {...radiiKnobProps({})}
+    placeholder={text("Placeholder", "Placeholder")}
+  />
+</Story>

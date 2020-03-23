@@ -10,18 +10,13 @@ import {
   FontSizeProps,
   fontWeight,
   FontWeightProps,
+  shadow,
+  ShadowProps,
   space,
   SpaceProps,
 } from "styled-system";
-import c from "color";
 import { baseTheme } from "../theme";
 import { ClassName } from "../types";
-
-const toShadow = (color: string): string =>
-  c(color)
-    .alpha(0.2)
-    .hsl()
-    .string();
 
 export interface InputProps
   extends BorderRadiusProps,
@@ -29,23 +24,21 @@ export interface InputProps
     DisplayProps,
     FontSizeProps,
     FontWeightProps,
+    ShadowProps,
     SpaceProps,
     ClassName {}
 
 const Input = styled.input<InputProps>`
   -webkit-appearance: initial; /* Resets the appearance in mobile Safari */
-  display: inline-flex;
-  flex-wrap: nowrap;
-  align-items: center;
   border: none;
-  height: 32px;
-  box-shadow: ${({ theme }) => `${theme.shadows[0]}, ${theme.shadows[1]}`};
+  height: 36px;
 
   ${borderRadius};
   ${color};
   ${display};
   ${fontSize};
   ${fontWeight};
+  ${shadow};
   ${space};
 
   &:hover,
@@ -56,7 +49,11 @@ const Input = styled.input<InputProps>`
   &:focus {
     outline: none;
     box-shadow: ${({ theme }) =>
-      `0 0 0 3px ${toShadow(theme.colors.blue.dark)}, ${theme.shadows[1]}`};
+      `0 0 0 3px ${theme.colors.blue.base}, ${theme.shadows[1]}`};
+  }
+
+  ::placeholder {
+    font-weight: ${({ theme }) => theme.fontWeights[0]};
   }
 `;
 
@@ -65,6 +62,7 @@ Input.defaultProps = {
   fontSize: 2,
   m: 0,
   px: 2,
+  boxShadow: "input",
   theme: baseTheme,
 };
 

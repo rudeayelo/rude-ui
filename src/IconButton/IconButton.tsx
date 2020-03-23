@@ -2,14 +2,14 @@ import React from "react";
 import { Button, ButtonProps } from "../Button";
 
 export interface IconButtonProps extends ButtonProps {
-  icon: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const IconButton = ({
-  icon,
+  children,
   iconBefore,
   iconAfter,
   ...rest
-}: IconButtonProps) => <Button iconBefore={icon} {...rest} />;
+}: IconButtonProps) => <Button iconBefore={children} {...rest} />;
 
 export { IconButton };

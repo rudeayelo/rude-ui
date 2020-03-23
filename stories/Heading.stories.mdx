@@ -1,0 +1,43 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
+import { colorKnobProps, typographyKnobProps } from "../helpers/storybook-knob-props"
+import { Box, Heading } from "../src";
+
+<Meta title="MDX|Heading" component={Heading} />
+
+# Heading
+
+<Props of={Heading} exclude="theme" />
+
+## Sizes
+
+<Preview>
+  <Story name="Size">
+    <>
+      <Heading textSize={7} mb={4}>Hello world</Heading>
+      <Heading textSize={6} mb={4}>Hello world</Heading>
+      <Heading textSize={5} mb={4}>Hello world</Heading>
+      <Heading textSize={4} mb={4}>Hello world (default)</Heading>
+      <Heading textSize={3} mb={4}>Hello world</Heading>
+      <Heading textSize={2} mb={4}>Hello world</Heading>
+      <Heading textSize={1} mb={4}>Hello world</Heading>
+      <Heading textSize={0}>Hello world</Heading>
+    </>
+  </Story>
+</Preview>
+
+<Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
+  <Heading
+    {...colorKnobProps({})}
+    textSize={number("Text size", 4, {
+      min: 0,
+      max: 5,
+      step: 1,
+    })}
+  >
+    {text(
+      "Heading",
+      "Whenever I feel the need to exercise, I lie down until it goes away",
+    )}
+  </Heading>
+</Story>
