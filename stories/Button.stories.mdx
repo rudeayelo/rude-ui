@@ -45,61 +45,61 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
   </Story>
 </Preview>
 
-## Intent
+## Tone
 
 <Preview>
-  <Story name="Intent">
+  <Story name="Tone">
     <Flex>
-      <Button>Default</Button>
-      <Button intent="none" ml={3}>
-        None
+      <Button>Default (info)</Button>
+      <Button tone="neutral" ml={3}>
+        Neutral
       </Button>
-      <Button intent="success" ml={3}>
-        Success
+      <Button tone="positive" ml={3}>
+        Positive
       </Button>
-      <Button intent="danger" ml={3}>
-        Danger
+      <Button tone="critical" ml={3}>
+        Negative
       </Button>
-      <Button intent="warning" ml={3}>
-        Warning
+      <Button tone="caution" ml={3}>
+        Caution
       </Button>
     </Flex>
   </Story>
 </Preview>
 
-## Mixing appearance and intent
+## Mixing appearance and tone
 
 <Preview>
-  <Story name="Appearance + intent">
+  <Story name="Appearance + tone">
     <>
       <Flex>
         <Button appearance="primary">Default</Button>
-        <Button appearance="primary" intent="none" ml={3}>
-          None
+        <Button appearance="primary" tone="neutral" ml={3}>
+          Neutral
         </Button>
-        <Button appearance="primary" intent="success" ml={3}>
-          Success
+        <Button appearance="primary" tone="positive" ml={3}>
+          Positive
         </Button>
-        <Button appearance="primary" intent="danger" ml={3}>
-          Danger
+        <Button appearance="primary" tone="critical" ml={3}>
+          Critical
         </Button>
-        <Button appearance="primary" intent="warning" ml={3}>
-          Warning
+        <Button appearance="primary" tone="caution" ml={3}>
+          Caution
         </Button>
       </Flex>
       <Flex mt={4}>
         <Button appearance="minimal">Default</Button>
-        <Button appearance="minimal" intent="none" ml={3}>
-          None
+        <Button appearance="minimal" tone="neutral" ml={3}>
+          Neutral
         </Button>
-        <Button appearance="minimal" intent="success" ml={3}>
-          Success
+        <Button appearance="minimal" tone="positive" ml={3}>
+          Positive
         </Button>
-        <Button appearance="minimal" intent="danger" ml={3}>
-          Danger
+        <Button appearance="minimal" tone="critical" ml={3}>
+          Critical
         </Button>
-        <Button appearance="minimal" intent="warning" ml={3}>
-          Warning
+        <Button appearance="minimal" tone="caution" ml={3}>
+          Caution
         </Button>
       </Flex>
     </>
@@ -121,13 +121,13 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
         <Button iconAfter={<EmailIcon />} ml={3} size="small">
           Send
         </Button>
-        <Button iconBefore={<DeleteIcon />} intent="danger" ml={4} size="large">
+        <Button iconBefore={<DeleteIcon />} tone="critical" ml={4} size="large">
           Delete
         </Button>
-        <Button iconBefore={<DeleteIcon />} intent="danger" ml={3}>
+        <Button iconBefore={<DeleteIcon />} tone="critical" ml={3}>
           Delete
         </Button>
-        <Button iconBefore={<DeleteIcon />} intent="danger" ml={3} size="small">
+        <Button iconBefore={<DeleteIcon />} tone="critical" ml={3} size="small">
           Delete
         </Button>
       </Flex>
@@ -181,7 +181,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
           ml={3}
           size="small"
           appearance="minimal"
-          intent="none"
+          tone="neutral"
         >
           Refresh
         </Button>
@@ -200,7 +200,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
       </IconButton>
       <IconButton
         appearance="minimal"
-        intent="danger"
+        tone="critical"
         ml={4}
       >
         <DeleteIcon />
@@ -215,14 +215,14 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 <Story name="Playground" decorators={[withKnobs]}  parameters={{ docs: { disable: true } }}>
   <Flex>
     <Button
-      intent={radios(
-        "intent",
+      tone={radios(
+        "tone",
         {
           default: "default",
-          none: "none",
-          success: "success",
-          danger: "danger",
-          warning: "warning",
+          neutral: "neutral",
+          positive: "positive",
+          critical: "critical",
+          caution: "caution",
         },
         "default",
       )}
@@ -250,14 +250,14 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
     <Button
       iconBefore={<DeleteIcon />}
       ml={4}
-      intent={radios(
-        "intent",
+      tone={radios(
+        "tone",
         {
           default: "default",
-          none: "none",
-          success: "success",
-          danger: "danger",
-          warning: "warning",
+          neutral: "neutral",
+          positive: "positive",
+          critical: "critical",
+          caution: "caution",
         },
         "default",
       )}
@@ -285,14 +285,14 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
     <Button
       iconAfter={<DeleteIcon />}
       ml={4}
-      intent={radios(
-        "intent",
+      tone={radios(
+        "tone",
         {
           default: "default",
-          none: "none",
-          success: "success",
-          danger: "danger",
-          warning: "warning",
+          neutral: "neutral",
+          positive: "positive",
+          critical: "critical",
+          caution: "caution",
         },
         "default",
       )}

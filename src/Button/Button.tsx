@@ -3,7 +3,7 @@ import styled, { css, DefaultTheme, StyledProps } from "styled-components";
 import styledMap from "styled-map";
 import { Text } from "../Text";
 import { space, SpaceProps, variant } from "styled-system";
-import { ClassName, Intent } from "../types";
+import { ClassName, Tone } from "../types";
 import { baseTheme } from "../theme";
 
 type Appearance = "default" | "primary" | "minimal";
@@ -20,7 +20,7 @@ export interface ButtonProps extends SpaceProps, ClassName {
   /** Color of the icon */
   iconColor?: Color;
   /** Specifies the color for the button */
-  intent?: Intent;
+  tone?: Tone;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /** Text/spacing size <"small" | "medium" | "large"> */
   size?: Size;
@@ -58,26 +58,26 @@ const appearance = variant({
   },
 });
 
-const intent = variant({
-  prop: "intent",
+const tone = variant({
+  prop: "tone",
   variants: {
-    none: {
+    neutral: {
       color: "g.30",
       backgroundColor: "g.30",
     },
-    default: {
+    info: {
       color: "blue.dark",
       backgroundColor: "blue.dark",
     },
-    success: {
+    positive: {
       color: "green.base",
       backgroundColor: "green.base",
     },
-    danger: {
+    critical: {
       color: "red.base",
       backgroundColor: "red.base",
     },
-    warning: {
+    caution: {
       color: "orange.base",
       backgroundColor: "orange.base",
     },
@@ -153,14 +153,14 @@ const ButtonStyled = styled.button`
   border: none;
   border-radius: ${({ theme }) => theme.radii[1]}px;
 
-  ${intent};
+  ${tone};
   ${size};
   ${appearance};
 
   ${space};
 `;
 
-const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
+export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
   <ButtonStyled {...props}>
     {props.iconBefore && (
       <IconBefore size={props.size} color={props.iconColor}>
@@ -178,9 +178,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
 
 Button.defaultProps = {
   appearance: "default",
-  intent: "default",
+  tone: "info",
   size: "medium",
   theme: baseTheme,
 };
-
-export { Button };

@@ -2,4 +2,4 @@ export interface ClassName {
   className?: string;
 }
 
-export type Intent = "none" | "default" | "success" | "danger" | "warning";
+export type Tone = "neutral" | "info" | "positive" | "critical" | "caution";
