@@ -81,7 +81,7 @@ CSSReset.defaultProps = {
 };
 
 export interface GlobalStyle {
-  withWebfont: boolean;
+  withWebfont?: boolean;
 }
 
 export const GlobalStyles: React.FC<GlobalStyle> = ({ withWebfont }) => {
