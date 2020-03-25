@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { css, DefaultTheme, StyledProps } from "styled-components";
+import styled, { css, StyledProps } from "styled-components";
 import styledMap from "styled-map";
 import { Text } from "../Text";
 import { space, SpaceProps, variant } from "styled-system";
@@ -24,7 +24,6 @@ export interface ButtonProps extends SpaceProps, ClassName {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /** Text/spacing size <"small" | "medium" | "large"> */
   size?: Size;
-  theme?: DefaultTheme;
 }
 
 interface IconProps {
@@ -36,16 +35,16 @@ const appearance = variant({
   prop: "appearance",
   variants: {
     default: {
-      background: "linear-gradient(to top, currentColor -3000%, white 400%)",
+      background: "white",
       "&:hover": {
-        background: "linear-gradient(to top, currentColor -2700%, white 700%)",
+        background: "linear-gradient(to top, currentColor -3000%, white 400%)",
       },
+      border: `2px solid`,
+      fontWeight: 1,
     },
     primary: {
       color: "hsla(0, 0%, 100%, .95)",
-      "&:hover": {
-        boxShadow: `${baseTheme.shadows[0]}, ${baseTheme.shadows[1]}`,
-      },
+      fontWeight: 1,
     },
     minimal: {
       "&:not(:hover)": {
@@ -63,23 +62,28 @@ const tone = variant({
   variants: {
     neutral: {
       color: "g.30",
-      backgroundColor: "g.30",
+      bg: "g.30",
+      "&:hover": { bg: "g.20" },
     },
     info: {
       color: "blue.dark",
-      backgroundColor: "blue.dark",
+      bg: "blue.dark",
+      "&:hover": { bg: "blue.darkest" },
     },
     positive: {
       color: "green.base",
-      backgroundColor: "green.base",
+      bg: "green.base",
+      "&:hover": { bg: "green.dark" },
     },
     critical: {
       color: "red.base",
-      backgroundColor: "red.base",
+      bg: "red.base",
+      "&:hover": { bg: "red.dark" },
     },
     caution: {
       color: "orange.base",
-      backgroundColor: "orange.base",
+      bg: "orange.base",
+      "&:hover": { bg: "orange.dark" },
     },
   },
 });
@@ -160,6 +164,10 @@ const ButtonStyled = styled.button`
   ${space};
 `;
 
+ButtonStyled.defaultProps = {
+  theme: baseTheme,
+};
+
 export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
   <ButtonStyled {...props}>
     {props.iconBefore && (
@@ -167,7 +175,9 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
         {props.iconBefore}
       </IconBefore>
     )}
-    {children && <Text>{children}</Text>}
+    {children && (
+      <Text mt={props.size === "medium" ? "-1px" : ""}>{children}</Text>
+    )}
     {props.iconAfter && (
       <IconAfter size={props.size} color={props.iconColor}>
         {props.iconAfter}
@@ -180,5 +190,4 @@ Button.defaultProps = {
   appearance: "default",
   tone: "info",
   size: "medium",
-  theme: baseTheme,
 };

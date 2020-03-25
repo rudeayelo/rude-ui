@@ -50,7 +50,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 <Preview>
   <Story name="Tone">
     <Flex>
-      <Button>Default (info)</Button>
+      <Button>Info (default)</Button>
       <Button tone="neutral" ml={3}>
         Neutral
       </Button>
@@ -134,18 +134,21 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
       <Flex mt={4}>
         <Button
           iconBefore={<MenuIcon />}
+          tone="neutral"
           size="large"
         >
           Menu
         </Button>
         <Button
           iconBefore={<MenuIcon />}
+          tone="neutral"
           ml={3}
         >
           Menu
         </Button>
         <Button
           iconBefore={<MenuIcon />}
+          tone="neutral"
           ml={3}
           size="small"
         >
@@ -198,15 +201,15 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
       <IconButton>
         <MenuIcon />
       </IconButton>
+      <IconButton appearance="primary" ml={3}>
+        <EmailIcon />
+      </IconButton>
       <IconButton
         appearance="minimal"
         tone="critical"
-        ml={4}
+        ml={3}
       >
         <DeleteIcon />
-      </IconButton>
-      <IconButton appearance="primary" ml={4}>
-        <EmailIcon />
       </IconButton>
     </Flex>
   </Story>
@@ -224,7 +227,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
           critical: "critical",
           caution: "caution",
         },
-        "default",
+        undefined,
       )}
       size={radios(
         "size",
@@ -233,7 +236,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
           medium: "medium",
           large: "large",
         },
-        "medium",
+        undefined,
       )}
       appearance={radios(
         "appearance",
@@ -242,7 +245,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
           primary: "primary",
           minimal: "minimal",
         },
-        "default",
+        undefined,
       )}
     >
       {text("Text", "Delete")}
@@ -288,13 +291,13 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
       tone={radios(
         "tone",
         {
-          default: "default",
+          "info (default)": "info",
           neutral: "neutral",
           positive: "positive",
           critical: "critical",
           caution: "caution",
         },
-        "default",
+        undefined,
       )}
       size={radios(
         "size",

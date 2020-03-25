@@ -49,7 +49,7 @@ const Input = styled.input<InputProps>`
   &:focus {
     outline: none;
     box-shadow: ${({ theme }) =>
-      `0 0 0 3px ${theme.colors.blue.base}, ${theme.shadows[1]}`};
+      `0 0 0 2px ${theme.colors.blue.base}, ${theme.shadows[1]}`};
   }
 
   ::placeholder {
