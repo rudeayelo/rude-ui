@@ -86,8 +86,8 @@ const colors = {
 };
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72];
-const lineHeights = [1.5, 1.5, 1.4, 1.3, 1.2, 1.1, 1, 1, 0.9];
-const fontWeights = [400, 700];
+const lineHeights = [1.5, 1.5, 1.4, 1.3, 1.3, 1.2, 1.1, 1, 0.9];
+const fontWeights = [400, 600, 800];
 
 const shadows = [
   "none",
