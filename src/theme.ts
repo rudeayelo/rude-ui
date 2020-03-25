@@ -119,7 +119,9 @@ const textSizes = {
 
 const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
 
-const radii = [0, 3, 6, 12, 16, 99];
+const radii = [0, 3, 6, 12, 16];
+// @ts-ignore
+radii.rounded = "99em";
 
 const fontFamily =
   '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';

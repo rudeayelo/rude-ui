@@ -1,0 +1,50 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, radios } from "@storybook/addon-knobs";
+import { Flex } from "../src/Flex";
+import { Badge } from "../src/Badge";
+
+<Meta title="MDX|Badge" component={Badge} />
+
+# Badge
+
+<Props of={Badge} exclude="theme" />
+
+## Tone
+
+<Preview>
+  <Story name="Tone">
+    <Flex>
+      <Badge>Info (default)</Badge>
+      <Badge tone="neutral" ml={2}>
+        Neutral
+      </Badge>
+      <Badge tone="positive" ml={2}>
+        Positive
+      </Badge>
+      <Badge tone="critical" ml={2}>
+        Negative
+      </Badge>
+      <Badge tone="caution" ml={2}>
+        Caution
+      </Badge>
+    </Flex>
+  </Story>
+</Preview>
+
+<Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
+  <Badge
+    tone={radios(
+      "tone",
+      {
+        "info (default)": "info",
+        neutral: "neutral",
+        positive: "positive",
+        critical: "critical",
+        caution: "caution",
+      },
+      undefined,
+    )}
+  >
+    {text("Text", "styled-components")}
+  </Badge>
+</Story>
