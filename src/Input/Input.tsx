@@ -60,7 +60,6 @@ const Input = styled.input<InputProps>`
 Input.defaultProps = {
   borderRadius: 1,
   fontSize: 2,
-  m: 0,
   px: 2,
   boxShadow: "input",
   theme: baseTheme,
