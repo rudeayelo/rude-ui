@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.3](https://github.com/rudeayelo/rude-ui/compare/v0.11.2...v0.11.3) (2020-03-25)
+
+
+### Bug Fixes
+
+* remove an unnecessary margin reset in `Input` ([ee5445a](https://github.com/rudeayelo/rude-ui/commit/ee5445ad2bcbffe7bf6e99c6f2be615ed3b823c0))
+
 ### [0.11.2](https://github.com/rudeayelo/rude-ui/compare/v0.11.1...v0.11.2) (2020-03-25)
 
 
