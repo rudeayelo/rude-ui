@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.1](https://github.com/rudeayelo/rude-ui/compare/v0.11.0...v0.11.1) (2020-03-25)
+
+
+### Features
+
+* add a `Badge` component ([c121011](https://github.com/rudeayelo/rude-ui/commit/c1210116353623211c47a3d8ec79ba6825dd0713))
+* add a new font weight ([6ac2536](https://github.com/rudeayelo/rude-ui/commit/6ac2536138e043e12322fae252bd8e962ca1bbed))
+
 ## [0.11.0](https://github.com/rudeayelo/rude-ui/compare/v0.10.7...v0.11.0) (2020-03-24)
 
 
