@@ -92,30 +92,30 @@ const size = variant({
   prop: "size",
   variants: {
     small: {
-      paddingRight: 2,
-      paddingLeft: 2,
-      height: 26,
-      fontSize: 0,
+      paddingRight: 3,
+      paddingLeft: 3,
+      height: 34,
+      fontSize: 1,
     },
     medium: {
       paddingRight: 3,
       paddingLeft: 3,
-      height: 32,
-      fontSize: 1,
+      height: 44,
+      fontSize: 2,
     },
     large: {
       paddingRight: 4,
       paddingLeft: 4,
-      height: 48,
+      height: 56,
       fontSize: 2,
     },
   },
 });
 
 const iconSize = styledMap("size", {
-  large: "18px",
-  medium: "14px",
-  small: "12px",
+  large: "20px",
+  medium: "16px",
+  small: "14px",
 });
 
 const iconMargin = styledMap("size", {
