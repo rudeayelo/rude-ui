@@ -6,7 +6,7 @@ import {
   spaceKnobProps,
   radiiKnobProps,
 } from "../helpers/storybook-knob-props";
-import { Input, Text } from "../src";
+import { Input, Box } from "../src";
 
 <Meta title="MDX|Input" component={Input} />
 
@@ -21,5 +21,6 @@ import { Input, Text } from "../src";
     {...spaceKnobProps()}
     {...radiiKnobProps({})}
     placeholder={text("Placeholder", "Placeholder")}
+    width="300px"
   />
 </Story>
