@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.4](https://github.com/rudeayelo/rude-ui/compare/v0.11.3...v0.11.4) (2020-03-26)
+
+
+### Features
+
+* make the `Input` take the full width of the container by default ([023cd1a](https://github.com/rudeayelo/rude-ui/commit/023cd1a30625a3639c0b31fd4dd0fcc324f864e4))
+
 ### [0.11.3](https://github.com/rudeayelo/rude-ui/compare/v0.11.2...v0.11.3) (2020-03-25)
 
 
