@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.5](https://github.com/rudeayelo/rude-ui/compare/v0.11.4...v0.11.5) (2020-03-26)
+
+
+### Bug Fixes
+
+* fix `Badge` export ([531b38c](https://github.com/rudeayelo/rude-ui/commit/531b38cdee7cd10b32a9c5f890d04ad684e6fab9))
+
 ### [0.11.4](https://github.com/rudeayelo/rude-ui/compare/v0.11.3...v0.11.4) (2020-03-26)
 
 
