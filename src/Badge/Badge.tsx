@@ -39,7 +39,7 @@ export const Badge = styled(Text).attrs({
   px: 2,
 })<BadgeProps>`
   background: linear-gradient(to top, currentColor -3000%, white 400%);
-  box-shadow: 0 0 1px currentColor;
+  box-shadow: 0 0 2px currentColor;
 
   ${tone}
 `;

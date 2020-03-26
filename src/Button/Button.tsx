@@ -6,7 +6,7 @@ import { space, SpaceProps, variant } from "styled-system";
 import { ClassName, Tone } from "../types";
 import { baseTheme } from "../theme";
 
-type Appearance = "default" | "primary" | "minimal";
+type Appearance = "primary" | "secondary" | "minimal";
 type Color = string;
 type Size = "small" | "medium" | "large";
 
@@ -34,16 +34,16 @@ interface IconProps {
 const appearance = variant({
   prop: "appearance",
   variants: {
-    default: {
+    primary: {
+      color: "hsla(0, 0%, 100%, .95)",
+      fontWeight: 1,
+    },
+    secondary: {
       background: "white",
       "&:hover": {
         background: "linear-gradient(to top, currentColor -3000%, white 400%)",
       },
-      border: `2px solid`,
-      fontWeight: 1,
-    },
-    primary: {
-      color: "hsla(0, 0%, 100%, .95)",
+      boxShadow: "inset 0 0 0 2px currentColor",
       fontWeight: 1,
     },
     minimal: {
@@ -187,7 +187,7 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
 );
 
 Button.defaultProps = {
-  appearance: "default",
+  appearance: "primary",
   tone: "info",
   size: "medium",
 };

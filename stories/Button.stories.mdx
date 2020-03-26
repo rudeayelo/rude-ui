@@ -20,10 +20,10 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 <Preview>
   <Story name="Appearance">
     <Flex>
-      <Button>Default</Button>
-      <Button appearance="primary" ml={3}>
-        Primary
+      <Button>
+        Primary (default)
       </Button>
+      <Button appearance="secondary" ml={3}>Secondary</Button>
       <Button appearance="minimal" ml={3}>
         Minimal
       </Button>
@@ -37,7 +37,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
   <Story name="Size">
     <Flex>
       <Button size="large">Large</Button>
-      <Button ml={3}>Default</Button>
+      <Button ml={3}>Medium (default)</Button>
       <Button size="small" ml={3}>
         Small
       </Button>
@@ -72,18 +72,33 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 <Preview>
   <Story name="Appearance + tone">
     <>
-      <Flex>
-        <Button appearance="primary">Default</Button>
-        <Button appearance="primary" tone="neutral" ml={3}>
+      <Flex mt={4}>
+        <Button>Default</Button>
+        <Button tone="neutral" ml={3}>
           Neutral
         </Button>
-        <Button appearance="primary" tone="positive" ml={3}>
+        <Button tone="positive" ml={3}>
           Positive
         </Button>
-        <Button appearance="primary" tone="critical" ml={3}>
+        <Button tone="critical" ml={3}>
           Critical
         </Button>
-        <Button appearance="primary" tone="caution" ml={3}>
+        <Button tone="caution" ml={3}>
+          Caution
+        </Button>
+      </Flex>
+      <Flex mt={4}>
+        <Button appearance="secondary">Default</Button>
+        <Button appearance="secondary" tone="neutral" ml={3}>
+          Neutral
+        </Button>
+        <Button appearance="secondary" tone="positive" ml={3}>
+          Positive
+        </Button>
+        <Button appearance="secondary" tone="critical" ml={3}>
+          Critical
+        </Button>
+        <Button appearance="secondary" tone="caution" ml={3}>
           Caution
         </Button>
       </Flex>
@@ -121,19 +136,20 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
         <Button iconAfter={<EmailIcon />} ml={3} size="small">
           Send
         </Button>
-        <Button iconBefore={<DeleteIcon />} tone="critical" ml={4} size="large">
+        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" ml={4} size="large">
           Delete
         </Button>
-        <Button iconBefore={<DeleteIcon />} tone="critical" ml={3}>
+        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" ml={3}>
           Delete
         </Button>
-        <Button iconBefore={<DeleteIcon />} tone="critical" ml={3} size="small">
+        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" ml={3} size="small">
           Delete
         </Button>
       </Flex>
       <Flex mt={4}>
         <Button
           iconBefore={<MenuIcon />}
+          appearance="secondary"
           tone="neutral"
           size="large"
         >
@@ -141,6 +157,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
         </Button>
         <Button
           iconBefore={<MenuIcon />}
+          appearance="secondary"
           tone="neutral"
           ml={3}
         >
@@ -148,6 +165,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
         </Button>
         <Button
           iconBefore={<MenuIcon />}
+          appearance="secondary"
           tone="neutral"
           ml={3}
           size="small"
@@ -201,7 +219,7 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
       <IconButton>
         <MenuIcon />
       </IconButton>
-      <IconButton appearance="primary" ml={3}>
+      <IconButton appearance="secondary" ml={3}>
         <EmailIcon />
       </IconButton>
       <IconButton
