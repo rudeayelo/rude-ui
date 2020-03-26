@@ -9,7 +9,7 @@ const loadWebfont = () => {
   link.type = "text/css";
   link.rel = "stylesheet";
   link.href =
-    "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap";
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap";
 
   head.appendChild(link);
 };
