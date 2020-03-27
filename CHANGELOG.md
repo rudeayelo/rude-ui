@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.9](https://github.com/rudeayelo/rude-ui/compare/v0.11.8...v0.11.9) (2020-03-27)
+
+
+### Features
+
+* remove visual vertical space from `Text` ([6b6e22f](https://github.com/rudeayelo/rude-ui/commit/6b6e22fa6a153a88404bf5c46bde8bb7f9e2c1ec))
+
 ### [0.11.8](https://github.com/rudeayelo/rude-ui/compare/v0.11.7...v0.11.8) (2020-03-26)
 
 ### [0.11.7](https://github.com/rudeayelo/rude-ui/compare/v0.11.6...v0.11.7) (2020-03-26)
