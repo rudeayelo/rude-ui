@@ -10,7 +10,7 @@ export const textCrop = css`
     const referenceFontSize = 16;
     const referenceLineHeight = 1.4;
     // @ts-ignore
-    const currentLineHeight = theme.textSizes[fontSize]["lineHeight"];
+    const currentLineHeight = theme.lineHeights[fontSize];
 
     const topCrop =
       Math.max(

@@ -173,7 +173,7 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
       </IconBefore>
     )}
     {children && (
-      <Text textSize={props.size === "small" ? 1 : undefined}>{children}</Text>
+      <Text fontSize={props.size === "small" ? 1 : undefined}>{children}</Text>
     )}
     {props.iconAfter && (
       <IconAfter size={props.size} color={props.iconColor}>
