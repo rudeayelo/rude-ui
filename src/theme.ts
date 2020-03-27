@@ -105,18 +105,6 @@ const levels = {
   "2": { boxShadow: `${shadows[1]}, ${shadows[3]}` },
 };
 
-const textSizes = {
-  "0": { fontSize: fontSizes[0], lineHeight: lineHeights[0] },
-  "1": { fontSize: fontSizes[1], lineHeight: lineHeights[1] },
-  "2": { fontSize: fontSizes[2], lineHeight: lineHeights[2] },
-  "3": { fontSize: fontSizes[3], lineHeight: lineHeights[3] },
-  "4": { fontSize: fontSizes[4], lineHeight: lineHeights[4] },
-  "5": { fontSize: fontSizes[5], lineHeight: lineHeights[5] },
-  "6": { fontSize: fontSizes[6], lineHeight: lineHeights[6] },
-  "7": { fontSize: fontSizes[7], lineHeight: lineHeights[7] },
-  "8": { fontSize: fontSizes[8], lineHeight: lineHeights[8] },
-};
-
 const space = [0, 4, 8, 16, 24, 32, 48, 64, 128, 256];
 
 const radii = [0, 3, 6, 12, 16];
@@ -136,7 +124,6 @@ const baseTheme: DefaultTheme = {
   radii,
   shadows,
   space,
-  textSizes,
 };
 
 // @ts-ignore

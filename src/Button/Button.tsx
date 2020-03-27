@@ -95,19 +95,16 @@ const size = variant({
       paddingRight: 3,
       paddingLeft: 3,
       height: 34,
-      fontSize: 1,
     },
     medium: {
       paddingRight: 3,
       paddingLeft: 3,
       height: 44,
-      fontSize: 2,
     },
     large: {
       paddingRight: 4,
       paddingLeft: 4,
       height: 56,
-      fontSize: 2,
     },
   },
 });
@@ -176,7 +173,7 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
       </IconBefore>
     )}
     {children && (
-      <Text mt={props.size === "medium" ? "-1px" : ""}>{children}</Text>
+      <Text textSize={props.size === "small" ? 1 : undefined}>{children}</Text>
     )}
     {props.iconAfter && (
       <IconAfter size={props.size} color={props.iconColor}>

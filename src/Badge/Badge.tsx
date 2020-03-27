@@ -35,8 +35,9 @@ export const Badge = styled(Text).attrs({
   borderRadius: "rounded",
   display: "inline-block",
   verticalAlign: "baseline",
-  textSize: 0,
+  fontSize: 0,
   px: 2,
+  py: 1,
 })<BadgeProps>`
   background: linear-gradient(to top, currentColor -3000%, white 400%);
   box-shadow: 0 0 2px currentColor;

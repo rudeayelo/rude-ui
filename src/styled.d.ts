@@ -4,6 +4,9 @@ interface Color {
   [k: string]: any;
 }
 
+type TextSizeEnum = "fontSize" | "lineHeight";
+type TextSizeItem = { [k in TextSizeEnum]: number };
+
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: Color;
@@ -15,6 +18,5 @@ declare module "styled-components" {
     radii: number[];
     shadows: string[];
     space: number[];
-    textSizes: {};
   }
 }

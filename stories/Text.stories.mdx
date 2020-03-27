@@ -1,8 +1,7 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text } from "@storybook/addon-knobs/react";
 import { colorKnobProps, typographyKnobProps } from "../helpers/storybook-knob-props";
-import { Box } from "../src/Box";
-import { Text } from "../src/Text";
+import { Box, Flex, Text } from "../src";
 
 <Meta title="MDX|Text" component={Text} />
 
@@ -15,15 +14,15 @@ import { Text } from "../src/Text";
 <Preview>
   <Story name="Size">
     <>
-      <Text textSize={8} mb={2}>Hello world</Text>
-      <Text textSize={7} mb={2}>Hello world</Text>
-      <Text textSize={6} mb={2}>Hello world</Text>
-      <Text textSize={5} mb={2}>Hello world</Text>
-      <Text textSize={4} mb={2}>Hello world</Text>
-      <Text textSize={3} mb={2}>Hello world</Text>
-      <Text textSize={2} mb={2}>Hello world</Text>
-      <Text textSize={1} mb={2}>Hello world</Text>
-      <Text textSize={0}>Hello world</Text>
+      <Text fontSize={8} mb={3}>Hello world</Text>
+      <Text fontSize={7} mb={3}>Hello world</Text>
+      <Text fontSize={6} mb={3}>Hello world</Text>
+      <Text fontSize={5} mb={3}>Hello world</Text>
+      <Text fontSize={4} mb={3}>Hello world</Text>
+      <Text fontSize={3} mb={3}>Hello world</Text>
+      <Text fontSize={2} mb={3}>Hello world</Text>
+      <Text fontSize={1} mb={3}>Hello world</Text>
+      <Text fontSize={0}>Hello world</Text>
     </>
   </Story>
 </Preview>
@@ -33,8 +32,8 @@ import { Text } from "../src/Text";
 <Preview>
   <Story name="Weights">
     <>
-      <Text textSize={4} fontWeight={1}>Bold weight</Text>
-      <Text textSize={4}>Normal weight (default)</Text>
+      <Text fontSize={4} fontWeight={1} mb={2}>Bold weight</Text>
+      <Text fontSize={4}>Normal weight (default)</Text>
     </>
   </Story>
 </Preview>
@@ -43,105 +42,105 @@ import { Text } from "../src/Text";
 
 <Preview>
   <Story name="Color">
-    <>
-      <Box>
-        <Text textSize={3} color="blue.lightest" mr={2} display="inline" fontWeight={1}>
-          blue.lightest
-        </Text>
-        <Text textSize={3} color="blue.light" mr={2} display="inline" fontWeight={1}>
-          blue.light
-        </Text>
-        <Text textSize={3} color="blue.base" mr={2} display="inline" fontWeight={1}>
-          blue.base
-        </Text>
-        <Text textSize={3} color="blue.dark" mr={2} display="inline" fontWeight={1}>
-          blue.dark
-        </Text>
-        <Text textSize={3} color="blue.darkest" mr={2} display="inline" fontWeight={1}>
-          blue.darkest
-        </Text>
-      </Box>
-      <Box>
-        <Text textSize={3} color="green.lightest" mr={2} display="inline" fontWeight={1}>
-          green.lightest
-        </Text>
-        <Text textSize={3} color="green.light" mr={2} display="inline" fontWeight={1}>
-          green.light
-        </Text>
-        <Text textSize={3} color="green.base" mr={2} display="inline" fontWeight={1}>
-          green.base
-        </Text>
-        <Text textSize={3} color="green.dark" mr={2} display="inline" fontWeight={1}>
-          green.dark
-        </Text>
-        <Text textSize={3} color="green.darkest" mr={2} display="inline" fontWeight={1}>
-          green.darkest
-        </Text>
-      </Box>
-      <Box>
-        <Text textSize={3} color="orange.lightest" mr={2} display="inline" fontWeight={1}>
-          orange.lightest
-        </Text>
-        <Text textSize={3} color="orange.light" mr={2} display="inline" fontWeight={1}>
-          orange.light
-        </Text>
-        <Text textSize={3} color="orange.base" mr={2} display="inline" fontWeight={1}>
-          orange.base
-        </Text>
-        <Text textSize={3} color="orange.dark" mr={2} display="inline" fontWeight={1}>
-          orange.dark
-        </Text>
-        <Text textSize={3} color="orange.darkest" mr={2} display="inline" fontWeight={1}>
-          orange.darkest
-        </Text>
-      </Box>
-      <Box>
-        <Text textSize={3} color="red.lightest" mr={2} display="inline" fontWeight={1}>
-          red.lightest
-        </Text>
-        <Text textSize={3} color="red.light" mr={2} display="inline" fontWeight={1}>
-          red.light
-        </Text>
-        <Text textSize={3} color="red.base" mr={2} display="inline" fontWeight={1}>
-          red.base
-        </Text>
-        <Text textSize={3} color="red.dark" mr={2} display="inline" fontWeight={1}>
-          red.dark
-        </Text>
-        <Text textSize={3} color="red.darkest" mr={2} display="inline" fontWeight={1}>
-          red.darkest
-        </Text>
-      </Box>
-      <Box>
-        <Text textSize={3} color="g.90" mr={2} display="inline" fontWeight={1}>
+    <Flex>
+      <Box mr={3}>
+        <Text fontSize={3} color="g.90" mb={3} fontWeight={1}>
           g.90
         </Text>
-        <Text textSize={3} color="g.80" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.80" mb={3} fontWeight={1}>
           g.80
         </Text>
-        <Text textSize={3} color="g.70" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.70" mb={3} fontWeight={1}>
           g.70
         </Text>
-        <Text textSize={3} color="g.60" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.60" mb={3} fontWeight={1}>
           g.60
         </Text>
-        <Text textSize={3} color="g.50" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.50" mb={3} fontWeight={1}>
           g.50
         </Text>
-        <Text textSize={3} color="g.40" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.40" mb={3} fontWeight={1}>
           g.40
         </Text>
-        <Text textSize={3} color="g.30" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.30" mb={3} fontWeight={1}>
           g.30
         </Text>
-        <Text textSize={3} color="g.20" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.20" mb={3} fontWeight={1}>
           g.20
         </Text>
-        <Text textSize={3} color="g.10" mr={2} display="inline" fontWeight={1}>
+        <Text fontSize={3} color="g.10" mb={3} fontWeight={1}>
           g.10
         </Text>
       </Box>
-    </>
+      <Box mr={3}>
+        <Text fontSize={3} color="blue.lightest" mb={3} fontWeight={1}>
+          blue.lightest
+        </Text>
+        <Text fontSize={3} color="blue.light" mb={3} fontWeight={1}>
+          blue.light
+        </Text>
+        <Text fontSize={3} color="blue.base" mb={3} fontWeight={1}>
+          blue.base
+        </Text>
+        <Text fontSize={3} color="blue.dark" mb={3} fontWeight={1}>
+          blue.dark
+        </Text>
+        <Text fontSize={3} color="blue.darkest" mb={3} fontWeight={1}>
+          blue.darkest
+        </Text>
+      </Box>
+      <Box mr={3}>
+        <Text fontSize={3} color="green.lightest" mb={3} fontWeight={1}>
+          green.lightest
+        </Text>
+        <Text fontSize={3} color="green.light" mb={3} fontWeight={1}>
+          green.light
+        </Text>
+        <Text fontSize={3} color="green.base" mb={3} fontWeight={1}>
+          green.base
+        </Text>
+        <Text fontSize={3} color="green.dark" mb={3} fontWeight={1}>
+          green.dark
+        </Text>
+        <Text fontSize={3} color="green.darkest" mb={3} fontWeight={1}>
+          green.darkest
+        </Text>
+      </Box>
+      <Box mr={3}>
+        <Text fontSize={3} color="orange.lightest" mb={3} fontWeight={1}>
+          orange.lightest
+        </Text>
+        <Text fontSize={3} color="orange.light" mb={3} fontWeight={1}>
+          orange.light
+        </Text>
+        <Text fontSize={3} color="orange.base" mb={3} fontWeight={1}>
+          orange.base
+        </Text>
+        <Text fontSize={3} color="orange.dark" mb={3} fontWeight={1}>
+          orange.dark
+        </Text>
+        <Text fontSize={3} color="orange.darkest" mb={3} fontWeight={1}>
+          orange.darkest
+        </Text>
+      </Box>
+      <Box mr={3}>
+        <Text fontSize={3} color="red.lightest" mb={3} fontWeight={1}>
+          red.lightest
+        </Text>
+        <Text fontSize={3} color="red.light" mb={3} fontWeight={1}>
+          red.light
+        </Text>
+        <Text fontSize={3} color="red.base" mb={3} fontWeight={1}>
+          red.base
+        </Text>
+        <Text fontSize={3} color="red.dark" mb={3} fontWeight={1}>
+          red.dark
+        </Text>
+        <Text fontSize={3} color="red.darkest" mb={3} fontWeight={1}>
+          red.darkest
+        </Text>
+      </Box>
+    </Flex>
   </Story>
 </Preview>
 
@@ -150,29 +149,29 @@ import { Text } from "../src/Text";
 <Preview>
   <Story name="Paragraphs">
     <Box width={600}>
-      <Text as="p" textSize={6} mb={4}>
+      <Text as="p" fontSize={6} mb={5}>
         Love is that condition in which the happiness of another person is
         essential to your own.
       </Text>
-      <Text as="p" textSize={5} mb={4}>
+      <Text as="p" fontSize={5} mb={5}>
         Beauty is in the eye of the beholder and it may be necessary from time
         to time to give a stupid or misinformed beholder a black eye.
       </Text>
-      <Text as="p" textSize={4} mb={4}>
+      <Text as="p" fontSize={4} mb={5}>
         There is never a time or place for true love. It happens accidentally,
         in a heartbeat, in a single flashing, throbbing moment.
       </Text>
-      <Text as="p" textSize={3} mb={4}>
+      <Text as="p" fontSize={3} mb={5}>
         It is impossible to live without failing at something, unless you live
         so cautiously that you might as well not have lived at all - in which
         case, you fail by default.
       </Text>
-      <Text as="p" textSize={2} mb={4}>
+      <Text as="p" fontSize={2} mb={5}>
         Sometimes, you read a book and it fills you with this weird evangelical
         zeal, and you become convinced that the shattered world will never be
         put back together unless and until all living humans read the book.
       </Text>
-      <Text as="p" textSize={1} mb={4}>
+      <Text as="p" fontSize={1} mb={5}>
         Here's to the crazy ones. The misfits. The rebels. The troublemakers.
         The round pegs in the square holes. The ones who see things differently.
         They're not fond of rules. And they have no respect for the status quo.
@@ -182,7 +181,7 @@ import { Text } from "../src/Text";
         crazy ones, we see genius. Because the people who are crazy enough to
         think they can change the world, are the ones who do.
       </Text>
-      <Text as="p" textSize={0} mb={4}>
+      <Text as="p" fontSize={0} mb={5}>
         You may not be her first, her last, or her only. She loved before she
         may love again. But if she loves you now, what else matters? She's not
         perfect—you aren't either, and the two of you may never be perfect

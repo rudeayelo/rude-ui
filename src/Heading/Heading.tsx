@@ -1,62 +1,33 @@
 import styled from "styled-components";
-import { variant } from "styled-system";
+import { textCrop, DEFAULT_TEXT_SIZE } from "../utils";
 import { Box, BoxProps } from "../Box";
 
-const headingSize = variant({
-  prop: "textSize",
-  variants: {
-    "0": {
-      color: "secondaryText",
-      textTransform: "uppercase",
-      fontSize: 0,
-      lineHeight: 1,
-    },
-    "1": {
-      letterSpacing: "-.02em",
-      fontSize: 3,
-      lineHeight: 3,
-    },
-    "2": {
-      letterSpacing: "-.02em",
-      fontSize: 4,
-      lineHeight: 4,
-      fontWeight: 0,
-    },
-    "3": {
-      letterSpacing: "-.02em",
-      fontSize: 4,
-      lineHeight: 4,
-    },
-    "4": {
-      letterSpacing: "-.02em",
-      fontSize: 5,
-      lineHeight: 5,
-    },
-    "5": {
-      letterSpacing: "-.02em",
-      fontSize: 6,
-      lineHeight: 6,
-    },
-    "6": {
-      letterSpacing: "-.02em",
-      fontSize: 7,
-      lineHeight: 7,
-    },
-    "7": {
-      letterSpacing: "-.02em",
-      fontSize: 8,
-      lineHeight: 8,
-    },
-  },
-});
-
 export interface HeadingProps extends BoxProps {
-  textSize?: number;
+  level?: 1 | 2 | 3 | 4 | 5;
 }
 
-export const Heading = styled(Box)<HeadingProps>(headingSize);
+const textScale = {
+  "5": 0,
+  "4": 3,
+  "3": 4,
+  "2": 5,
+  "1": 6,
+};
+
+export const Heading = styled(Box).attrs<HeadingProps>(
+  ({ level = DEFAULT_TEXT_SIZE, ...props }) => ({
+    fontSize: textScale[level],
+    lineHeight: textScale[level],
+    letterSpacing: level !== 5 && "-.02em",
+    color: level !== 5 ? props.color : props.color || "secondaryText",
+  }),
+)<HeadingProps>`
+  text-transform: ${({ fontSize }) => fontSize === 0 && "uppercase"};
+
+  ${textCrop}
+`;
 
 Heading.defaultProps = {
-  textSize: 4,
+  level: DEFAULT_TEXT_SIZE,
   fontWeight: 1,
 };
