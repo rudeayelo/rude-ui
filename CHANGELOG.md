@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.10](https://github.com/rudeayelo/rude-ui/compare/v0.11.9...v0.11.10) (2020-03-27)
+
+
+### Bug Fixes
+
+* fix some remaining appearances of `textSize` ([064d334](https://github.com/rudeayelo/rude-ui/commit/064d3345d9c6c7d2c709e42001b15673f771aa11))
+
 ### [0.11.9](https://github.com/rudeayelo/rude-ui/compare/v0.11.8...v0.11.9) (2020-03-27)
 
 
