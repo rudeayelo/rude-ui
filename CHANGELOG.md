@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.11](https://github.com/rudeayelo/rude-ui/compare/v0.11.10...v0.11.11) (2020-03-29)
+
+
+### Features
+
+* add a `Table` component ([a0be3bd](https://github.com/rudeayelo/rude-ui/commit/a0be3bd2fb9950bdfeaec2b4833c3821ee09a91b))
+
 ### [0.11.10](https://github.com/rudeayelo/rude-ui/compare/v0.11.9...v0.11.10) (2020-03-27)
 
 
