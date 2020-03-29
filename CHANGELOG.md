@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.12](https://github.com/rudeayelo/rude-ui/compare/v0.11.11...v0.11.12) (2020-03-29)
+
+
+### Bug Fixes
+
+* make `Td` crop the vertical space ([b4d5145](https://github.com/rudeayelo/rude-ui/commit/b4d51453756b0c3f16f7efd6dfadf606c8c717db))
+
 ### [0.11.11](https://github.com/rudeayelo/rude-ui/compare/v0.11.10...v0.11.11) (2020-03-29)
 
 
