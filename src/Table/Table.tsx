@@ -1,14 +1,6 @@
 import styled from "styled-components";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-} from "styled-system";
+import { space, SpaceProps } from "styled-system";
+import { Text, TextProps } from "../Text";
 import { baseTheme } from "../theme";
 
 export interface TableProps extends SpaceProps {}
@@ -24,19 +16,10 @@ Table.defaultProps = {
   theme: baseTheme,
 };
 
-export interface TdProps
-  extends BorderProps,
-    ColorProps,
-    SpaceProps,
-    TypographyProps {}
+export interface TdProps extends TextProps {}
 
-export const Td = styled.td<TdProps>`
+export const Td = styled(Text).attrs({ as: "td" })<TdProps>`
   font-variant-numeric: tabular-nums;
-
-  ${border}
-  ${color}
-  ${space}
-  ${typography}
 
   &:last-of-type {
     padding-right: 0;
@@ -44,8 +27,8 @@ export const Td = styled.td<TdProps>`
 `;
 
 Td.defaultProps = {
-  pt: 2,
-  pb: 2,
+  pt: 3,
+  pb: 3,
   pr: 3,
   borderBottom: "1px solid",
   borderColor: "g.90",
@@ -54,7 +37,7 @@ Td.defaultProps = {
   theme: baseTheme,
 };
 
-export interface ThProps extends BorderProps, SpaceProps, TypographyProps {}
+export interface ThProps extends TdProps {}
 
 export const Th = styled(Td)<ThProps>({});
 
