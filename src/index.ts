@@ -8,4 +8,5 @@ export * from "./Heading";
 export * from "./IconButton";
 export * from "./Input";
 export * from "./Text";
+export * from "./Table";
 export * from "./theme";

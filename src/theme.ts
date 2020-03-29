@@ -77,7 +77,7 @@ const aliasColors = {
   primary: paletteColors.blue.base,
   accent: paletteColors.green.base,
   primaryText: paletteColors.g["10"],
-  secondaryText: paletteColors.g["50"],
+  secondaryText: paletteColors.g["60"],
 };
 
 const colors = {

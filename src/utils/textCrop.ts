@@ -3,6 +3,7 @@ import { BoxProps } from "../Box";
 
 export const DEFAULT_TEXT_SIZE = 2;
 
+/* Code reference: http://text-crop.eightshapes.com/?typeface-selection=google-font&typeface=Inter&custom-typeface-name=Helvetica&custom-typeface-url=&custom-typeface-weight=400&custom-typeface-style=normal&weight-and-style=500&size=16&line-height=1.4&top-crop=5&bottom-crop=5 */
 export const textCrop = css`
   ${({ fontSize = DEFAULT_TEXT_SIZE, theme }: StyledProps<BoxProps>) => {
     const refTopCrop = 5;

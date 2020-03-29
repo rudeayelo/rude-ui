@@ -1,0 +1,37 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Table, Thead, Tbody, Tr, Th, Td, Badge } from "../src";
+
+<Meta title="MDX|Table" component={Table} />
+
+# Table
+
+<Props of={Table} exclude="theme" />
+
+<Story name="Usage">
+  <Table>
+    <Thead>
+      <Tr>
+        <Th>Name</Th>
+        <Th>Status</Th>
+        <Th>Last update</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>Project 1</Td>
+        <Td><Badge tone="positive">Updated</Badge></Td>
+        <Td>about 10 hours ago</Td>
+      </Tr>
+      <Tr>
+        <Td>Project 2</Td>
+        <Td><Badge tone="neutral">Idle</Badge></Td>
+        <Td>about 3 days ago</Td>
+      </Tr>
+      <Tr>
+        <Td>Project 3</Td>
+        <Td><Badge tone="critical">Build failed</Badge></Td>
+        <Td>about 5 days ago</Td>
+      </Tr>
+    </Tbody>
+  </Table>
+</Story>
