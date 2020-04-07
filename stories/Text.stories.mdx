@@ -1,7 +1,6 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, text } from "@storybook/addon-knobs/react";
-import { colorKnobProps, typographyKnobProps } from "../helpers/storybook-knob-props";
-import { Box, Flex, Text } from "../src";
+import { withKnobs, text, number, select } from "@storybook/addon-knobs/react";
+import { Stack, Text } from "../src";
 
 <Meta title="MDX|Text" component={Text} />
 
@@ -13,17 +12,19 @@ import { Box, Flex, Text } from "../src";
 
 <Preview>
   <Story name="Size">
-    <>
-      <Text fontSize={8} mb={3}>Hello world</Text>
-      <Text fontSize={7} mb={3}>Hello world</Text>
-      <Text fontSize={6} mb={3}>Hello world</Text>
-      <Text fontSize={5} mb={3}>Hello world</Text>
-      <Text fontSize={4} mb={3}>Hello world</Text>
-      <Text fontSize={3} mb={3}>Hello world</Text>
-      <Text fontSize={2} mb={3}>Hello world</Text>
-      <Text fontSize={1} mb={3}>Hello world</Text>
-      <Text fontSize={0}>Hello world</Text>
-    </>
+    <Stack direction="vertical" gap={3}>
+      <Text size={10}>Hello world</Text>
+      <Text size={9}>Hello world</Text>
+      <Text size={8}>Hello world</Text>
+      <Text size={7}>Hello world</Text>
+      <Text size={6}>Hello world</Text>
+      <Text size={5}>Hello world</Text>
+      <Text size={4}>Hello world</Text>
+      <Text size={3}>Hello world</Text>
+      <Text size={2}>Hello world</Text>
+      <Text size={1}>Hello world</Text>
+      <Text size={0}>Hello world</Text>
+    </Stack>
   </Story>
 </Preview>
 
@@ -31,116 +32,10 @@ import { Box, Flex, Text } from "../src";
 
 <Preview>
   <Story name="Weights">
-    <>
-      <Text fontSize={4} fontWeight={1} mb={2}>Bold weight</Text>
-      <Text fontSize={4}>Normal weight (default)</Text>
-    </>
-  </Story>
-</Preview>
-
-## Color
-
-<Preview>
-  <Story name="Color">
-    <Flex>
-      <Box mr={3}>
-        <Text fontSize={3} color="g.90" mb={3} fontWeight={1}>
-          g.90
-        </Text>
-        <Text fontSize={3} color="g.80" mb={3} fontWeight={1}>
-          g.80
-        </Text>
-        <Text fontSize={3} color="g.70" mb={3} fontWeight={1}>
-          g.70
-        </Text>
-        <Text fontSize={3} color="g.60" mb={3} fontWeight={1}>
-          g.60
-        </Text>
-        <Text fontSize={3} color="g.50" mb={3} fontWeight={1}>
-          g.50
-        </Text>
-        <Text fontSize={3} color="g.40" mb={3} fontWeight={1}>
-          g.40
-        </Text>
-        <Text fontSize={3} color="g.30" mb={3} fontWeight={1}>
-          g.30
-        </Text>
-        <Text fontSize={3} color="g.20" mb={3} fontWeight={1}>
-          g.20
-        </Text>
-        <Text fontSize={3} color="g.10" mb={3} fontWeight={1}>
-          g.10
-        </Text>
-      </Box>
-      <Box mr={3}>
-        <Text fontSize={3} color="blue.lightest" mb={3} fontWeight={1}>
-          blue.lightest
-        </Text>
-        <Text fontSize={3} color="blue.light" mb={3} fontWeight={1}>
-          blue.light
-        </Text>
-        <Text fontSize={3} color="blue.base" mb={3} fontWeight={1}>
-          blue.base
-        </Text>
-        <Text fontSize={3} color="blue.dark" mb={3} fontWeight={1}>
-          blue.dark
-        </Text>
-        <Text fontSize={3} color="blue.darkest" mb={3} fontWeight={1}>
-          blue.darkest
-        </Text>
-      </Box>
-      <Box mr={3}>
-        <Text fontSize={3} color="green.lightest" mb={3} fontWeight={1}>
-          green.lightest
-        </Text>
-        <Text fontSize={3} color="green.light" mb={3} fontWeight={1}>
-          green.light
-        </Text>
-        <Text fontSize={3} color="green.base" mb={3} fontWeight={1}>
-          green.base
-        </Text>
-        <Text fontSize={3} color="green.dark" mb={3} fontWeight={1}>
-          green.dark
-        </Text>
-        <Text fontSize={3} color="green.darkest" mb={3} fontWeight={1}>
-          green.darkest
-        </Text>
-      </Box>
-      <Box mr={3}>
-        <Text fontSize={3} color="orange.lightest" mb={3} fontWeight={1}>
-          orange.lightest
-        </Text>
-        <Text fontSize={3} color="orange.light" mb={3} fontWeight={1}>
-          orange.light
-        </Text>
-        <Text fontSize={3} color="orange.base" mb={3} fontWeight={1}>
-          orange.base
-        </Text>
-        <Text fontSize={3} color="orange.dark" mb={3} fontWeight={1}>
-          orange.dark
-        </Text>
-        <Text fontSize={3} color="orange.darkest" mb={3} fontWeight={1}>
-          orange.darkest
-        </Text>
-      </Box>
-      <Box mr={3}>
-        <Text fontSize={3} color="red.lightest" mb={3} fontWeight={1}>
-          red.lightest
-        </Text>
-        <Text fontSize={3} color="red.light" mb={3} fontWeight={1}>
-          red.light
-        </Text>
-        <Text fontSize={3} color="red.base" mb={3} fontWeight={1}>
-          red.base
-        </Text>
-        <Text fontSize={3} color="red.dark" mb={3} fontWeight={1}>
-          red.dark
-        </Text>
-        <Text fontSize={3} color="red.darkest" mb={3} fontWeight={1}>
-          red.darkest
-        </Text>
-      </Box>
-    </Flex>
+    <Stack direction="vertical" gap={3}>
+      <Text size={6} weight="bold">Bold weight</Text>
+      <Text size={6}>Normal weight (default)</Text>
+    </Stack>
   </Story>
 </Preview>
 
@@ -148,30 +43,30 @@ import { Box, Flex, Text } from "../src";
 
 <Preview>
   <Story name="Paragraphs">
-    <Box width={600}>
-      <Text as="p" fontSize={6} mb={5}>
+    <Stack direction="vertical" gap={6}>
+      <Text as="p" size={7}>
         Love is that condition in which the happiness of another person is
         essential to your own.
       </Text>
-      <Text as="p" fontSize={5} mb={5}>
+      <Text as="p" size={6}>
         Beauty is in the eye of the beholder and it may be necessary from time
         to time to give a stupid or misinformed beholder a black eye.
       </Text>
-      <Text as="p" fontSize={4} mb={5}>
+      <Text as="p" size={5}>
         There is never a time or place for true love. It happens accidentally,
         in a heartbeat, in a single flashing, throbbing moment.
       </Text>
-      <Text as="p" fontSize={3} mb={5}>
+      <Text as="p" size={4}>
         It is impossible to live without failing at something, unless you live
         so cautiously that you might as well not have lived at all - in which
         case, you fail by default.
       </Text>
-      <Text as="p" fontSize={2} mb={5}>
+      <Text as="p" size={3}>
         Sometimes, you read a book and it fills you with this weird evangelical
         zeal, and you become convinced that the shattered world will never be
         put back together unless and until all living humans read the book.
       </Text>
-      <Text as="p" fontSize={1} mb={5}>
+      <Text as="p" size={2}>
         Here's to the crazy ones. The misfits. The rebels. The troublemakers.
         The round pegs in the square holes. The ones who see things differently.
         They're not fond of rules. And they have no respect for the status quo.
@@ -181,7 +76,7 @@ import { Box, Flex, Text } from "../src";
         crazy ones, we see genius. Because the people who are crazy enough to
         think they can change the world, are the ones who do.
       </Text>
-      <Text as="p" fontSize={0} mb={5}>
+      <Text as="p" size={1}>
         You may not be her first, her last, or her only. She loved before she
         may love again. But if she loves you now, what else matters? She's not
         perfect—you aren't either, and the two of you may never be perfect
@@ -193,14 +88,23 @@ import { Box, Flex, Text } from "../src";
         expect more than she can give. Smile when she makes you happy, let her
         know when she makes you mad, and miss her when she's not there.
       </Text>
-    </Box>
+    </Stack>
   </Story>
 </Preview>
 
 <Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
   <Text
-    {...colorKnobProps({})}
-    {...typographyKnobProps({ defaultTextSize: 2 })}
+    size={number("Size", undefined, {
+      min: 1,
+      max: 10,
+      step: 1,
+    })}
+    weight={select("Weight", {
+        normal: "normal",
+        bold: "bold",
+      },
+      undefined,
+    )}
   >
     {text(
       "Text",

@@ -7,7 +7,8 @@ import {
   ExpandBottomIcon,
   RefreshIcon,
 } from "../helpers/icons";
-import { baseTheme, Flex, Text, Button, IconButton } from "../src";
+import { Stack, Text, Button, IconButton } from "../src";
+import { tokens } from "../src/theme.ts";
 
 <Meta title="MDX|Button" component={Button} />
 
@@ -19,15 +20,11 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Preview>
   <Story name="Appearance">
-    <Flex>
-      <Button>
-        Primary (default)
-      </Button>
-      <Button appearance="secondary" ml={3}>Secondary</Button>
-      <Button appearance="minimal" ml={3}>
-        Minimal
-      </Button>
-    </Flex>
+    <Stack gap={3}>
+      <Button>Primary (default)</Button>
+      <Button appearance="secondary">Secondary</Button>
+      <Button appearance="minimal">Minimal</Button>
+    </Stack>
   </Story>
 </Preview>
 
@@ -35,13 +32,11 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Preview>
   <Story name="Size">
-    <Flex>
+    <Stack gap={3}>
       <Button size="large">Large</Button>
-      <Button ml={3}>Medium (default)</Button>
-      <Button size="small" ml={3}>
-        Small
-      </Button>
-    </Flex>
+      <Button>Medium (default)</Button>
+      <Button size="small">Small</Button>
+    </Stack>
   </Story>
 </Preview>
 
@@ -49,21 +44,13 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Preview>
   <Story name="Tone">
-    <Flex>
+    <Stack gap={3}>
       <Button>Info (default)</Button>
-      <Button tone="neutral" ml={3}>
-        Neutral
-      </Button>
-      <Button tone="positive" ml={3}>
-        Positive
-      </Button>
-      <Button tone="critical" ml={3}>
-        Negative
-      </Button>
-      <Button tone="caution" ml={3}>
-        Caution
-      </Button>
-    </Flex>
+      <Button tone="neutral">Neutral</Button>
+      <Button tone="positive">Positive</Button>
+      <Button tone="critical">Negative</Button>
+      <Button tone="caution">Caution</Button>
+    </Stack>
   </Story>
 </Preview>
 
@@ -71,53 +58,45 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Preview>
   <Story name="Appearance + tone">
-    <>
-      <Flex>
+    <Stack direction="vertical" gap={4}>
+      <Stack gap={3}>
         <Button>Default</Button>
-        <Button tone="neutral" ml={3}>
-          Neutral
-        </Button>
-        <Button tone="positive" ml={3}>
-          Positive
-        </Button>
-        <Button tone="critical" ml={3}>
-          Critical
-        </Button>
-        <Button tone="caution" ml={3}>
-          Caution
-        </Button>
-      </Flex>
-      <Flex mt={4}>
+        <Button tone="neutral">Neutral</Button>
+        <Button tone="positive">Positive</Button>
+        <Button tone="critical">Critical</Button>
+        <Button tone="caution">Caution</Button>
+      </Stack>
+      <Stack gap={3}>
         <Button appearance="secondary">Default</Button>
-        <Button appearance="secondary" tone="neutral" ml={3}>
+        <Button appearance="secondary" tone="neutral">
           Neutral
         </Button>
-        <Button appearance="secondary" tone="positive" ml={3}>
+        <Button appearance="secondary" tone="positive">
           Positive
         </Button>
-        <Button appearance="secondary" tone="critical" ml={3}>
+        <Button appearance="secondary" tone="critical">
           Critical
         </Button>
-        <Button appearance="secondary" tone="caution" ml={3}>
+        <Button appearance="secondary" tone="caution">
           Caution
         </Button>
-      </Flex>
-      <Flex mt={4}>
+      </Stack>
+      <Stack gap={3}>
         <Button appearance="minimal">Default</Button>
-        <Button appearance="minimal" tone="neutral" ml={3}>
+        <Button appearance="minimal" tone="neutral">
           Neutral
         </Button>
-        <Button appearance="minimal" tone="positive" ml={3}>
+        <Button appearance="minimal" tone="positive">
           Positive
         </Button>
-        <Button appearance="minimal" tone="critical" ml={3}>
+        <Button appearance="minimal" tone="critical">
           Critical
         </Button>
-        <Button appearance="minimal" tone="caution" ml={3}>
+        <Button appearance="minimal" tone="caution">
           Caution
         </Button>
-      </Flex>
-    </>
+      </Stack>
+    </Stack>
   </Story>
 </Preview>
 
@@ -125,28 +104,28 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Preview>
   <Story name="With icons">
-    <>
-      <Flex>
+    <Stack direction="vertical" gap={6}>
+      <Stack gap={3}>
         <Button iconAfter={<EmailIcon />} size="large">
           Send
         </Button>
-        <Button iconAfter={<EmailIcon />} ml={3}>
+        <Button iconAfter={<EmailIcon />}>
           Send
         </Button>
-        <Button iconAfter={<EmailIcon />} ml={3} size="small">
+        <Button iconAfter={<EmailIcon />} size="small">
           Send
         </Button>
         <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" ml={4} size="large">
           Delete
         </Button>
-        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" ml={3}>
+        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical">
           Delete
         </Button>
-        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" ml={3} size="small">
+        <Button appearance="secondary" iconBefore={<DeleteIcon />} tone="critical" size="small">
           Delete
         </Button>
-      </Flex>
-      <Flex mt={4}>
+      </Stack>
+      <Stack gap={3}>
         <Button
           iconBefore={<MenuIcon />}
           appearance="secondary"
@@ -159,7 +138,6 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
           iconBefore={<MenuIcon />}
           appearance="secondary"
           tone="neutral"
-          ml={3}
         >
           Menu
         </Button>
@@ -167,7 +145,6 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
           iconBefore={<MenuIcon />}
           appearance="secondary"
           tone="neutral"
-          ml={3}
           size="small"
         >
           Menu
@@ -175,39 +152,36 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
         <Button
           iconBefore={<MenuIcon />}
           appearance="primary"
-          ml={4}
           size="large"
         >
           Menu
         </Button>
-        <Button iconBefore={<MenuIcon />} appearance="primary" ml={3}>
+        <Button iconBefore={<MenuIcon />} appearance="primary">
           Menu
         </Button>
         <Button
           iconBefore={<MenuIcon />}
           appearance="primary"
-          ml={3}
           size="small"
         >
           Menu
         </Button>
-      </Flex>
-      <Flex mt={4}>
+      </Stack>
+      <Stack gap={3}>
         <Button iconAfter={<ExpandBottomIcon />} appearance="minimal" size="small">
           Select
         </Button>
         <Button
           iconBefore={<RefreshIcon />}
-          iconColor={baseTheme.colors.blue.base}
-          ml={3}
+          iconColor={tokens.colors.blues["500"]}
           size="small"
           appearance="minimal"
           tone="neutral"
         >
           Refresh
         </Button>
-      </Flex>
-    </>
+      </Stack>
+    </Stack>
   </Story>
 </Preview>
 
@@ -215,26 +189,25 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
 
 <Preview>
   <Story name="Icon only">
-    <Flex>
+    <Stack gap={3}>
       <IconButton>
         <MenuIcon />
       </IconButton>
-      <IconButton appearance="secondary" ml={3}>
+      <IconButton appearance="secondary" tone="neutral">
         <EmailIcon />
       </IconButton>
       <IconButton
         appearance="minimal"
         tone="critical"
-        ml={3}
       >
         <DeleteIcon />
       </IconButton>
-    </Flex>
+    </Stack>
   </Story>
 </Preview>
 
 <Story name="Playground" decorators={[withKnobs]}  parameters={{ docs: { disable: true } }}>
-  <Flex>
+  <Stack gap={3}>
     <Button
       tone={radios(
         "tone",
@@ -338,5 +311,5 @@ import { baseTheme, Flex, Text, Button, IconButton } from "../src";
     >
       {text("Text", "Delete")}
     </Button>
-  </Flex>
+  </Stack>
 </Story>

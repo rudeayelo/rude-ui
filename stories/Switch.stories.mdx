@@ -1,0 +1,27 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Switch, Stack } from "../src";
+
+<Meta title="MDX|Switch" component={Switch} />
+
+# Switch
+
+<Props of={Switch} exclude="theme" />
+
+## Usage
+
+<Preview>
+  <Story name="Usage">
+    <Stack gap={3}>
+      <Switch onClick={console.log} />
+      <Switch onClick={console.log} defaultValue={true} />
+    </Stack>
+  </Story>
+</Preview>
+
+## Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <Switch onClick={console.log} disabled={true} />
+  </Story>
+</Preview>

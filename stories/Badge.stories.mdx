@@ -1,7 +1,6 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, radios } from "@storybook/addon-knobs";
-import { Flex } from "../src/Flex";
-import { Badge } from "../src/Badge";
+import { Badge, Stack } from "../src/components";
 
 <Meta title="MDX|Badge" component={Badge} />
 
@@ -13,7 +12,7 @@ import { Badge } from "../src/Badge";
 
 <Preview>
   <Story name="Tone">
-    <Flex>
+    <Stack gap={3}>
       <Badge>Info (default)</Badge>
       <Badge tone="neutral" ml={2}>
         Neutral
@@ -27,7 +26,7 @@ import { Badge } from "../src/Badge";
       <Badge tone="caution" ml={2}>
         Caution
       </Badge>
-    </Flex>
+    </Stack>
   </Story>
 </Preview>
 

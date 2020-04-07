@@ -1,6 +1,6 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, number, text } from "@storybook/addon-knobs";
-import { Flex, Text, Card } from "../src";
+import { Stack, Text, Card } from "../src";
 
 <Meta title="MDX|Card" component={Card} />
 
@@ -12,29 +12,33 @@ import { Flex, Text, Card } from "../src";
 
 <Preview>
   <Story name="Level">
-    <Flex>
+    <Stack gap={3}>
       <Card level={0}>
-        <Text p={4}>Level 0</Text>
+        <Text css={{ padding: 4 }}>Level 0</Text>
       </Card>
-      <Card ml={4}>
-        <Text p={4}>Level 1 (default)</Text>
+      <Card>
+        <Text css={{ padding: 4 }}>Level 1 (default)</Text>
       </Card>
-      <Card level={2} ml={4}>
-        <Text p={4}>Level 2</Text>
+      <Card level={2}>
+        <Text css={{ padding: 4 }}>Level 2</Text>
       </Card>
-    </Flex>
+      <Card level={3}>
+        <Text css={{ padding: 4 }}>Level 3</Text>
+      </Card>
+    </Stack>
   </Story>
 </Preview>
 
 <Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
   <Card
+    css={{ maxWidth: 400 }}
     level={number("Level", 1, {
       min: 0,
-      max: 1,
+      max: 3,
       step: 1,
     })}
   >
-    <Text p={4}>
+    <Text css={{ padding: 4 }}>
       {text(
         "Text",
         "I love deadlines. I love the whooshing noise they make as they go by.",

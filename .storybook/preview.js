@@ -1,10 +1,9 @@
 import React from "react";
+import { Stack, ThemeProvider } from "../src";
 import { addDecorator } from "@storybook/react";
-import { Box, GlobalStyles } from "../src";
 
 addDecorator(story => (
-  <>
-    <GlobalStyles />
-    <Box p={4}>{story()}</Box>
-  </>
+  <ThemeProvider>
+    <Stack css={{ padding: 4 }}>{story()}</Stack>
+  </ThemeProvider>
 ));

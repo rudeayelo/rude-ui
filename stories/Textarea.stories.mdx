@@ -1,0 +1,22 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
+import { Textarea, Element } from "../src";
+
+<Meta title="MDX|Textarea" component={Textarea} />
+
+# Textarea
+
+<Props of={Textarea} exclude="theme" />
+
+<Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
+  <Element css={{ width: 400 }}>
+    <Textarea
+      rows={number("Rows", undefined, {
+        min: 1,
+        max: 10,
+        step: 1,
+      })}
+      placeholder={text("Placeholder", "Placeholder")}
+    />
+  </Element>
+</Story>

@@ -1,0 +1,22 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Grid, Stack } from "../src";
+
+<Meta title="MDX|Layout" component={Grid} />
+
+# Grid
+
+<Props of={Grid} exclude="theme" />
+
+## Usage
+
+<Story name="Sizes">
+  <Grid>
+    <Grid.Row css={{ height: '20px', background: "grays.300" }}>header</Grid.Row>
+    <Grid.Column span={2} css={{ height: '140px', background: "grays.200" }}>
+      sidebar
+    </Grid.Column>
+    <Grid.Column span={10} css={{ height: '140px', background: "grays.100" }}>
+      main
+    </Grid.Column>
+  </Grid>
+</Story>

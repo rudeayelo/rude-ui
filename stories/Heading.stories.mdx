@@ -1,7 +1,6 @@
 import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, number } from "@storybook/addon-knobs";
-import { colorKnobProps, typographyKnobProps } from "../helpers/storybook-knob-props"
-import { Box, Heading } from "../src";
+import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { Stack, Heading } from "../src";
 
 <Meta title="MDX|Heading" component={Heading} />
 
@@ -13,29 +12,41 @@ import { Box, Heading } from "../src";
 
 <Preview>
   <Story name="Size">
-    <>
-      <Heading level={1} mb={4}>Hello world</Heading>
-      <Heading level={1} fontWeight={0} mb={4}>Hello world</Heading>
-      <Heading level={2} mb={4}>Hello world</Heading>
-      <Heading level={2} fontWeight={0} mb={4}>Hello world</Heading>
-      <Heading level={3} mb={4}>Hello world (default)</Heading>
-      <Heading level={3} fontWeight={0} mb={4}>Hello world (default)</Heading>
-      <Heading level={4} mb={4}>Hello world</Heading>
-      <Heading level={4} fontWeight={0} mb={4}>Hello world</Heading>
-      <Heading level={5} mb={4}>Hello world</Heading>
-      <Heading level={5} fontWeight={0}>Hello world</Heading>
-    </>
+    <Stack direction="vertical" gap={6}>
+      <Stack direction="vertical" gap={3}>
+        <Heading size="display">Display</Heading>
+        <Heading size="display" soft>Display</Heading>
+      </Stack>
+      <Stack direction="vertical" gap={3}>
+        <Heading size="page" as="h2">Page</Heading>
+        <Heading size="page" soft as="h2">Page</Heading>
+      </Stack>
+      <Stack direction="vertical" gap={3}>
+        <Heading size="section" as="h3">Section (default)</Heading>
+        <Heading size="section" soft as="h3">Section</Heading>
+      </Stack>
+      <Stack direction="vertical" gap={3}>
+        <Heading size="paragraph" as="h4">Paragraph</Heading>
+        <Heading size="paragraph" soft as="h4">Paragraph</Heading>
+      </Stack>
+      <Stack direction="vertical" gap={3}>
+        <Heading size="aside" as="h5">Aside</Heading>
+        <Heading size="aside" soft as="h5">Aside</Heading>
+      </Stack>
+    </Stack>
   </Story>
 </Preview>
 
 <Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
   <Heading
-    {...colorKnobProps({})}
-    level={number("Level", undefined, {
-      min: 1,
-      max: 5,
-      step: 1,
-    })}
+    size={select("Size", {
+      display: "display",
+      page: "page",
+      section: "section",
+      paragraph: "paragraph",
+      aside: "aside",
+    }, "section")}
+    soft={boolean("Soft", false)}
   >
     {text(
       "Heading",

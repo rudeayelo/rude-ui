@@ -1,0 +1,37 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Text, Stack, ThemeProvider } from "../src";
+import { tokens } from "../src/theme.ts";
+import { ColorBand } from "../helpers/Colors.tsx";
+
+<Meta title="MDX|Colors" />
+
+## Shades
+
+<ThemeProvider>
+  <Stack gap={6} direction="vertical" css={{ paddingTop: 6 }}>
+    <Stack gap={3} direction="vertical">
+      <Text css={{ fontFamily: "mono" }}>blues.XXX</Text>
+      <ColorBand color="blues" />
+    </Stack>
+    <Stack gap={3} direction="vertical">
+      <Text css={{ fontFamily: "mono" }}>greens.XXX</Text>
+      <ColorBand color="greens" />
+    </Stack>
+    <Stack gap={3} direction="vertical">
+      <Text css={{ fontFamily: "mono" }}>reds.XXX</Text>
+      <ColorBand color="reds" />
+    </Stack>
+    <Stack gap={3} direction="vertical">
+      <Text css={{ fontFamily: "mono" }}>oranges.XXX</Text>
+      <ColorBand color="oranges" />
+    </Stack>
+    <Stack gap={3} direction="vertical">
+      <Text css={{ fontFamily: "mono" }}>yellows.XXX</Text>
+      <ColorBand color="yellows" />
+    </Stack>
+    <Stack gap={3} direction="vertical">
+      <Text css={{ fontFamily: "mono" }}>grays.XXX</Text>
+      <ColorBand color="grays" />
+    </Stack>
+  </Stack>
+</ThemeProvider>

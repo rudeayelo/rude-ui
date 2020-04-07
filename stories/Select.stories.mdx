@@ -1,0 +1,74 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, boolean, radios } from "@storybook/addon-knobs";
+import { Select, Stack } from "../src";
+
+<Meta title="MDX|Select" component={Select} />
+
+# Select
+
+<Props of={Select} exclude="theme" />
+
+## Usage
+
+<Story name="Usage">
+  <Stack direction="vertical" gap={3} css={{ width: 400 }}>
+    <Select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+    <Select disabled>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+    <Select invalid>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+  </Stack>
+</Story>
+
+## Size
+
+<Story name="Size">
+  <Stack direction="vertical" gap={3} css={{ width: 400 }}>
+    <Select size="small">
+      <option>Small</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+    <Select>
+      <option>Medium (default)</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+    <Select size="large">
+      <option>Large</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+  </Stack>
+</Story>
+
+<Story name="Playground" decorators={[withKnobs]} parameters={{ docs: { disable: true } }}>
+  <Stack direction="vertical" gap={3} css={{ width: 400 }}>
+    <Select
+      invalid={boolean("Invalid", false)}
+      disabled={boolean("Disabled", false)}
+      size={radios(
+        "Size",
+        {
+          small: "small",
+          medium: "medium",
+          large: "large",
+        },
+        "medium",
+      )}>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+  </Stack>
+</Story>

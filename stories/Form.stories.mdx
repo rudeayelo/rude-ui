@@ -1,0 +1,28 @@
+import { Story, Meta, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Form, Input, Stack } from "../src";
+
+<Meta title="MDX|Form" component={Form} />
+
+# Form
+
+<Props of={Form} exclude="theme" />
+
+## Usage
+
+<Preview>
+  <Story name="Usage">
+    <Form css={{ maxWidth: 400 }}>
+      <Stack direction="vertical" gap={4}>
+        <Form.Field>
+          <Form.Label htmlFor="name">Name</Form.Label>
+          <Input id="name" />
+        </Form.Field>
+        <Form.Field>
+          <Form.Label htmlFor="surname">Surname</Form.Label>
+          <Input id="surname" />
+        </Form.Field>
+      </Stack>
+    </Form>
+  </Story>
+</Preview>
+
