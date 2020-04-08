@@ -21,6 +21,7 @@ export interface CSS {
 export interface ElementProps extends CSS, Margins {
   as?: keyof HTMLElementTagNameMap | FC;
   component?: string;
+  variant?: string;
 }
 
 export type Tone = "neutral" | "info" | "positive" | "critical" | "caution";

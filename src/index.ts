@@ -1,6 +1,7 @@
 export * from "./components/Badge";
 export * from "./components/Button";
 export * from "./components/Card";
+export * from "./components/Element";
 export * from "./components/Form";
 export * from "./components/Grid";
 export * from "./components/Heading";
@@ -16,5 +17,4 @@ export * from "./components/Text";
 export * from "./components/Textarea";
 export * from "./components/ThemeProvider";
 
-export { Element } from "react-ui";
 export * from "./theme";
