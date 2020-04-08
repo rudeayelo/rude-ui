@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.1](https://github.com/rudeayelo/rude-ui/compare/v0.13.0...v0.13.1) (2020-04-08)
+
+
+### Bug Fixes
+
+* fix GridColumn CSS type ([3c8396c](https://github.com/rudeayelo/rude-ui/commit/3c8396cbada5f27fbfbc14cf4b0c80c588055f27))
+
 ## [0.13.0](https://github.com/rudeayelo/rude-ui/compare/v0.12.1...v0.13.0) (2020-04-08)
 
 
