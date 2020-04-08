@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.14.0](https://github.com/rudeayelo/rude-ui/compare/v0.13.1...v0.14.0) (2020-04-08)
+
+
+### Features
+
+* re-export Element with types ([c176a54](https://github.com/rudeayelo/rude-ui/commit/c176a54cf4764f41a667e03453b53491df9bc81b))
+
 ### [0.13.1](https://github.com/rudeayelo/rude-ui/compare/v0.13.0...v0.13.1) (2020-04-08)
 
 

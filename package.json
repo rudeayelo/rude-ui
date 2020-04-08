@@ -1,6 +1,6 @@
 {
   "name": "@rudeland/ui",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "author": "Rude Ayelo <me@rude.works> (http://rude.works)",
   "license": "MIT",
   "main": "dist/index.js",
