@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.1](https://github.com/rudeayelo/rude-ui/compare/v0.12.0...v0.12.1) (2020-04-08)
+
+
+### Features
+
+* remove compound components in Form ([b97a34c](https://github.com/rudeayelo/rude-ui/commit/b97a34c7021a9bc60c8ecab856badd4be1e17dbc))
+
 ## [0.12.0](https://github.com/rudeayelo/rude-ui/compare/v0.11.14...v0.12.0) (2020-04-08)
 
 
