@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.14](https://github.com/rudeayelo/rude-ui/compare/v0.11.13...v0.11.14) (2020-04-08)
+
+
+### Features
+
+* fix Grid types ([2bb4ed5](https://github.com/rudeayelo/rude-ui/commit/2bb4ed529222f81c4d1a822f07f0efdf2ccd2040))
+
 ### [0.11.13](https://github.com/rudeayelo/rude-ui/compare/v0.11.12...v0.11.13) (2020-04-07)
 
 
