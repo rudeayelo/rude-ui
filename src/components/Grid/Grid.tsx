@@ -4,7 +4,7 @@ import {
   Column as BaseColumn,
   Row as BaseRow,
 } from "react-ui";
-import { ElementProps } from "../../types";
+import { ElementProps, CSS } from "../../types";
 import { tokens } from "../../theme";
 
 export interface GridProps extends ElementProps {
