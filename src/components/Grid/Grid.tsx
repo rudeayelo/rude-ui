@@ -13,18 +13,28 @@ export interface GridProps extends ElementProps {
   rowGap?: keyof typeof tokens.space;
 }
 
-export const Grid: React.FC<GridProps> = props => <BaseGrid {...props} />;
+interface GridCompound {
+  Column: React.FC<GridColumnProps>;
+  Row: React.FC<GridProps>;
+}
+
+export const Grid: React.FC<GridProps> & GridCompound = props => (
+  <BaseGrid {...props} />
+);
 
 type Columns = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export interface ColumnProps extends CSS {
+export interface GridColumnProps extends CSS {
   span?: 0 | Columns;
   start?: Columns;
   end?: Columns;
 }
 
-export const GridColumn: React.FC<ColumnProps> = props => (
+export const GridColumn: React.FC<GridColumnProps> = props => (
   <BaseColumn {...props} />
 );
 
 export const GridRow: React.FC<GridProps> = props => <BaseRow {...props} />;
+
+Grid.Column = GridColumn;
+Grid.Row = GridRow;

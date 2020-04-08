@@ -6,7 +6,16 @@ import { ElementProps } from "../../types";
 
 export interface FormProps extends HTMLFormElement, ElementProps {}
 
-export const Form: React.FC<FormProps> = ({ css, children, ...rest }) => (
+interface FormCompound {
+  Field: React.FC<FormFieldProps>;
+  Label: React.FC<FormLabelProps>;
+}
+
+export const Form: React.FC<FormProps> & FormCompound = ({
+  css,
+  children,
+  ...rest
+}) => (
   <Element
     as="form"
     component="Form"
@@ -17,9 +26,9 @@ export const Form: React.FC<FormProps> = ({ css, children, ...rest }) => (
   </Element>
 );
 
-export interface FieldProps extends StackProps {}
+export interface FormFieldProps extends StackProps {}
 
-export const FormField: React.FC<FieldProps> = props => (
+export const FormField: React.FC<FormFieldProps> = props => (
   <Stack component="FormField" {...props} />
 );
 
@@ -28,12 +37,15 @@ FormField.defaultProps = {
   gap: 2,
 };
 
-export interface LabelProps extends HTMLLabelElement, TextProps {}
+export interface FormLabelProps extends HTMLLabelElement, TextProps {}
 
-export const FormLabel: React.FC<LabelProps> = props => (
+export const FormLabel: React.FC<FormLabelProps> = props => (
   <Text as="label" component="FormLabel" {...props} />
 );
 
 FormLabel.defaultProps = {
   size: 2,
 };
+
+Form.Field = FormField;
+Form.Label = FormLabel;
