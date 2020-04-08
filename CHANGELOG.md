@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/rudeayelo/rude-ui/compare/v0.11.14...v0.12.0) (2020-04-08)
+
+
+### Features
+
+* remove compound components in Grid ([99ecf66](https://github.com/rudeayelo/rude-ui/commit/99ecf66cd34b4c67d42f13226f52a6b3ebc9db96))
+
 ### [0.11.14](https://github.com/rudeayelo/rude-ui/compare/v0.11.13...v0.11.14) (2020-04-08)
 
 
