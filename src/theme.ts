@@ -288,6 +288,8 @@ const components = {
       primary: {
         color: "hsla(0, 0%, 100%, .95)",
         fontWeight: "bold",
+        boxShadow:
+          "inset 0 0 0 1px hsla(0, 0%, 0%, .1), inset 0 0 2px hsla(0, 0%, 0%, .1)",
       },
       secondary: {
         background: "white",
