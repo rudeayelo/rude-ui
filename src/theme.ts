@@ -237,7 +237,6 @@ const tokens: ThemeTokens = {
 const tableCell = {
   fontVariantNumeric: "tabular-nums",
   textAlign: "left",
-  paddingTop: 3,
   paddingBottom: 3,
   paddingRight: 3,
   borderBottom: "1px solid",
@@ -460,6 +459,7 @@ const components = {
   },
   Td: {
     ...tableCell,
+    paddingTop: 3,
     borderColor: "grays.200",
     fontSize: 3,
   },

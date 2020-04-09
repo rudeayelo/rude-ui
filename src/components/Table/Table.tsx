@@ -1,5 +1,6 @@
 import React from "react";
 import { Element } from "react-ui";
+import { Text } from "../Text";
 import { ElementProps, AllHTMLProps } from "../../types";
 
 type NativeTableProps = AllHTMLProps<HTMLTableElement>;
@@ -18,9 +19,17 @@ export const Td: React.FC<TdProps> = props => (
 
 export interface ThProps extends TdProps {}
 
-export const Th: React.FC<ThProps> = props => (
-  <Element as="th" component="Th" {...props} />
-);
+export const Th: React.FC<ThProps> = ({ children, ...rest }) => {
+  return (
+    <Element as="th" component="Th" {...rest}>
+      {typeof children === "string" ? (
+        <Text size={2}>{children}</Text>
+      ) : (
+        children
+      )}
+    </Element>
+  );
+};
 
 type NativeTableRowElement = AllHTMLProps<HTMLTableRowElement>;
 export interface TrProps extends NativeTableRowElement, ElementProps {}
