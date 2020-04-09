@@ -1,8 +1,9 @@
 import React from "react";
 import { Textarea as BaseTextarea } from "react-ui";
-import { ElementProps } from "../../types";
+import { ElementProps, AllHTMLProps } from "../../types";
 
-export interface TextareaProps extends HTMLTextAreaElement, ElementProps {
+type NativeTextAreaElement = AllHTMLProps<HTMLTextAreaElement>;
+export interface TextareaProps extends NativeTextAreaElement, ElementProps {
   rows: number;
 }
 

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, AllHTMLAttributes } from "react";
 import * as csstype from "csstype";
 import { tokens } from "./theme";
 
@@ -23,6 +23,9 @@ export interface ElementProps extends CSS, Margins {
   component?: string;
   variant?: string;
 }
+
+export interface AllHTMLProps<ElementType>
+  extends Omit<AllHTMLAttributes<ElementType>, "as"> {}
 
 export type Tone = "neutral" | "info" | "positive" | "critical" | "caution";
 

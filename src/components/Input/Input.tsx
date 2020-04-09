@@ -1,10 +1,9 @@
 import React from "react";
 import { Input as BaseInput } from "react-ui";
-import { ElementProps } from "../../types";
+import { ElementProps, AllHTMLProps } from "../../types";
 
-type HTMLInputAttributes = Omit<HTMLInputElement, "size">;
-
-export interface InputProps extends HTMLInputAttributes, ElementProps {
+type NativeInputProps = Omit<AllHTMLProps<HTMLInputElement>, "size">;
+export interface InputProps extends NativeInputProps, ElementProps {
   size: "small" | "medium" | "large";
 }
 

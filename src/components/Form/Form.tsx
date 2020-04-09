@@ -2,9 +2,10 @@ import React from "react";
 import { Element, merge } from "react-ui";
 import { Text, TextProps } from "../Text";
 import { Stack, StackProps } from "../Stack";
-import { ElementProps } from "../../types";
+import { ElementProps, AllHTMLProps } from "../../types";
 
-export interface FormProps extends HTMLFormElement, ElementProps {}
+type NativeFormProps = AllHTMLProps<HTMLFormElement>;
+export interface FormProps extends NativeFormProps, ElementProps {}
 
 interface FormCompound {
   Field: React.FC<FormFieldProps>;
@@ -37,7 +38,8 @@ FormField.defaultProps = {
   gap: 2,
 };
 
-export interface FormLabelProps extends HTMLLabelElement, TextProps {}
+type NativeLabelProps = Omit<AllHTMLProps<HTMLLabelElement>, "size">;
+export interface FormLabelProps extends NativeLabelProps, TextProps {}
 
 export const FormLabel: React.FC<FormLabelProps> = props => (
   <Text as="label" component="FormLabel" {...props} />

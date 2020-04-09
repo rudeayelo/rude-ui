@@ -1,8 +1,9 @@
 import React from "react";
 import { Link as BaseLink } from "react-ui";
-import { ElementProps } from "../../types";
+import { ElementProps, AllHTMLProps } from "../../types";
 
-export interface LinkProps extends HTMLAnchorElement, ElementProps {}
+type NativeAnchorProps = AllHTMLProps<HTMLAnchorElement>;
+export interface LinkProps extends NativeAnchorProps, ElementProps {}
 
 export const Link: React.FC<LinkProps> = props => (
   <BaseLink as="a" component="Link" {...props} />

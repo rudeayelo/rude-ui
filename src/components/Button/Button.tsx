@@ -7,7 +7,11 @@ import { Tone, ElementProps } from "../../types";
 type Appearance = "primary" | "secondary" | "minimal";
 type Size = "small" | "medium" | "large";
 
-export interface ButtonProps extends ElementProps {
+type NativeButtonProps = Omit<
+  React.AllHTMLAttributes<HTMLButtonElement>,
+  "size" | "as"
+>;
+export interface ButtonProps extends NativeButtonProps, ElementProps {
   /** Specifies the color for the button */
   tone?: Tone;
   /** Variant for the main aspect of the button <"default" | "primary" | "minimal"> */
@@ -20,7 +24,6 @@ export interface ButtonProps extends ElementProps {
   iconBefore?: React.ReactNode;
   /** Color of the icon */
   iconColor?: string;
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 interface IconProps {

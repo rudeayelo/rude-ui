@@ -1,10 +1,10 @@
 import React from "react";
 import { Select as BaseSelect } from "react-ui";
-import { ElementProps } from "../../types";
+import { ElementProps, AllHTMLProps } from "../../types";
 
-type HTMLSelectProps = Omit<HTMLSelectElement, "size">;
+type NativeSelectProps = Omit<AllHTMLProps<HTMLSelectElement>, "size">;
 
-export interface SelectProps extends HTMLSelectProps, ElementProps {
+export interface SelectProps extends NativeSelectProps, ElementProps {
   size: "small" | "medium" | "large";
 }
 
