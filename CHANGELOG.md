@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.1](https://github.com/rudeayelo/rude-ui/compare/v0.14.0...v0.14.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* hopefully fix types in all components ([c6080ec](https://github.com/rudeayelo/rude-ui/commit/c6080eca9cb77a9221d1a2fcec19564d48bfde68))
+
 ## [0.14.0](https://github.com/rudeayelo/rude-ui/compare/v0.13.1...v0.14.0) (2020-04-08)
 
 
