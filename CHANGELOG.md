@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.4](https://github.com/rudeayelo/rude-ui/compare/v0.14.3...v0.14.4) (2020-04-09)
+
+
+### Features
+
+* smaller font size in default `Button` ([17e6070](https://github.com/rudeayelo/rude-ui/commit/17e6070772e6dafb18902f91babc1f8e167d19c7))
+
 ### [0.14.3](https://github.com/rudeayelo/rude-ui/compare/v0.14.2...v0.14.3) (2020-04-09)
 
 
