@@ -404,7 +404,7 @@ const components = {
     },
   },
   Spinner: {
-    sizes: { small: 7, medium: 8, large: 10 },
+    sizes: { small: 4, medium: 7, large: 10 },
     borderColor: "grays.200",
     borderLeftColor: "blues.600",
   },
