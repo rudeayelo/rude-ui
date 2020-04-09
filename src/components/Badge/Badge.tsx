@@ -1,5 +1,5 @@
 import React from "react";
-import { Element } from "react-ui";
+import { Element, merge } from "react-ui";
 import { useBasekick } from "../../hooks";
 import { ElementProps, Tone } from "../../types";
 
@@ -19,7 +19,7 @@ export const Badge: React.FC<BadgeProps> = ({
       as="span"
       component="Badge"
       variant={tone}
-      css={{ ...basekickCSS, ...css }}
+      css={merge(basekickCSS, { display: "inline-block" }, css)}
       {...rest}
     />
   );
