@@ -1,5 +1,5 @@
 import React from "react";
-import { Element, Text as BaseText } from "react-ui";
+import { Element, Text as BaseText, merge } from "react-ui";
 import { useBasekick } from "../../hooks";
 import { ElementProps, FontSizes } from "../../types";
 
@@ -7,6 +7,8 @@ export interface TextProps extends ElementProps {
   size?: FontSizes;
   align?: "left" | "right" | "center" | "justify" | "inherit" | "initial";
   maxWidth?: string | number;
+  bold?: boolean;
+  italic?: boolean;
 }
 
 export const Text: React.FC<TextProps> = ({
@@ -17,6 +19,8 @@ export const Text: React.FC<TextProps> = ({
   marginLeft,
   marginX,
   marginY,
+  bold,
+  italic,
   size = 3,
   ...rest
 }) => {
@@ -32,9 +36,19 @@ export const Text: React.FC<TextProps> = ({
     ...(marginY && { marginY }),
   };
 
+  const styleProps = {
+    fontWeight: bold && "bold",
+    fontStyle: italic && "italic",
+  };
+
   return (
     <Element {...marginProps} css={css}>
-      <BaseText size={size} component="BaseText" css={basekickCSS} {...rest} />
+      <BaseText
+        size={size}
+        component="BaseText"
+        css={merge(basekickCSS, styleProps)}
+        {...rest}
+      />
     </Element>
   );
 };
