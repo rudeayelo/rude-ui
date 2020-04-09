@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.2](https://github.com/rudeayelo/rude-ui/compare/v0.14.1...v0.14.2) (2020-04-09)
+
+
+### Bug Fixes
+
+* make size optional in Input ([25a011c](https://github.com/rudeayelo/rude-ui/commit/25a011c4270a5daef837d5cf29a05b5afafc7e05))
+
 ### [0.14.1](https://github.com/rudeayelo/rude-ui/compare/v0.14.0...v0.14.1) (2020-04-09)
 
 
