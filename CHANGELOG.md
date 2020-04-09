@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.3](https://github.com/rudeayelo/rude-ui/compare/v0.14.2...v0.14.3) (2020-04-09)
+
+
+### Features
+
+* remove top spacinig in `Table` ([7b744c7](https://github.com/rudeayelo/rude-ui/commit/7b744c770e376370c8fc41a8bbc659cd89186c65))
+
 ### [0.14.2](https://github.com/rudeayelo/rude-ui/compare/v0.14.1...v0.14.2) (2020-04-09)
 
 
