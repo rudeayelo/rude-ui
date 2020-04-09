@@ -45,7 +45,7 @@ const iconGap = {
 
 const fontSizes = {
   small: 2 as const,
-  medium: 3 as const,
+  medium: 2 as const,
   large: 3 as const,
 };
 
