@@ -16,8 +16,8 @@ const loadWebfont = () => {
 
 export interface ThemeProvider {
   withWebfont?: boolean;
-  tokens: ThemeTokens;
-  components: {};
+  tokens?: ThemeTokens;
+  components?: {};
 }
 
 export const ThemeProvider: React.FC<ThemeProvider> = ({
