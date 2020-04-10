@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.17.0](https://github.com/rudeayelo/rude-ui/compare/v0.16.2...v0.17.0) (2020-04-10)
+
+
+### Features
+
+* bump `Heading` sizes a bit for section and paragraph ([b4f36a4](https://github.com/rudeayelo/rude-ui/commit/b4f36a4c32e7772695c61a6a0297f07d2c652091))
+
 ### [0.16.2](https://github.com/rudeayelo/rude-ui/compare/v0.16.1...v0.16.2) (2020-04-10)
 
 
