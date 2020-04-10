@@ -107,8 +107,8 @@ const aliasFontSizes = {
   Heading: {
     display: 8 as const,
     page: 7 as const,
-    section: 5 as const,
-    paragraph: 4 as const,
+    section: 6 as const,
+    paragraph: 5 as const,
     aside: 2 as const,
   },
 };
