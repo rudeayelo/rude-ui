@@ -4,7 +4,7 @@ import { ElementProps, AllHTMLProps } from "../../types";
 
 type NativeTextAreaElement = AllHTMLProps<HTMLTextAreaElement>;
 export interface TextareaProps extends NativeTextAreaElement, ElementProps {
-  rows: number;
+  rows?: number;
 }
 
 export const Textarea: React.FC<TextareaProps> = props => (
