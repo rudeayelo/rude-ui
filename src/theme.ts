@@ -1,4 +1,5 @@
 import c from "color";
+import merge from "deepmerge";
 
 export interface ThemeTokens {
   name: string;
@@ -327,7 +328,7 @@ const components = {
       color: "text.subtle",
     },
     ":hover:not(:disabled)": {
-      borderColor: "grays.600",
+      borderColor: "grays.400",
     },
     ":focus:not(:disabled)": {
       outline: "none",
@@ -540,4 +541,13 @@ const components = {
 
 const theme = { tokens, components };
 
-export { tokens, components, theme };
+const overwriteMerge = (_destinationArray: [], sourceArray: [], _options: {}) =>
+  sourceArray;
+const createTokens = (clientTokens: {}): {} =>
+  merge(tokens, clientTokens, { arrayMerge: overwriteMerge });
+const createComponents = (clientComponents: {}): {} =>
+  merge(components, clientComponents, {
+    arrayMerge: overwriteMerge,
+  });
+
+export { tokens, components, theme, createTokens, createComponents };
