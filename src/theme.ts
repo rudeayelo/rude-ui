@@ -514,7 +514,9 @@ const components = {
   },
   Form: {},
   FormLabel: {},
-  FormField: {},
+  FormField: {
+    width: "100%",
+  },
   FormHeader: {
     color: "text.body",
     fontSize: 5,
