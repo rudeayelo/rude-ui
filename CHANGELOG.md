@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.1](https://github.com/rudeayelo/rude-ui/compare/v0.17.0...v0.17.1) (2020-04-11)
+
+
+### Features
+
+* make the `FormField` take the full width of the container ([1ea6a60](https://github.com/rudeayelo/rude-ui/commit/1ea6a60f00176c994a69dabdee6a1e0cfd501d8b))
+
 ## [0.17.0](https://github.com/rudeayelo/rude-ui/compare/v0.16.2...v0.17.0) (2020-04-10)
 
 
