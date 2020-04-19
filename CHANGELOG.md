@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.2](https://github.com/rudeayelo/rude-ui/compare/v0.17.1...v0.17.2) (2020-04-19)
+
+
+### Features
+
+* upgrade dependencies and use `leading-trim` for the basekick ([45804b6](https://github.com/rudeayelo/rude-ui/commit/45804b68ccd3a80836b9d6e20434b03859184c95))
+
 ### [0.17.1](https://github.com/rudeayelo/rude-ui/compare/v0.17.0...v0.17.1) (2020-04-11)
 
 
