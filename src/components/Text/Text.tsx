@@ -26,14 +26,14 @@ export const Text: React.FC<TextProps> = ({
 }) => {
   const basekickCSS = useBasekick(size);
 
-  // Just sending the props down to `Text` seems to reset them when undefined
   const marginProps = {
-    ...(marginTop && { marginTop }),
-    ...(marginRight && { marginRight }),
-    ...(marginBottom && { marginBottom }),
-    ...(marginLeft && { marginLeft }),
+    // Just sending the props down to `Text` seems to reset them when undefined
     ...(marginX && { marginX }),
     ...(marginY && { marginY }),
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
   };
 
   const styleProps = {
