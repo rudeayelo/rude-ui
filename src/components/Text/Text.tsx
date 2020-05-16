@@ -13,28 +13,13 @@ export interface TextProps extends ElementProps {
 
 export const Text: React.FC<TextProps> = ({
   css,
-  marginTop,
-  marginRight,
-  marginBottom,
-  marginLeft,
-  marginX,
-  marginY,
   bold,
   italic,
   size = 3,
+  children,
   ...rest
 }) => {
   const basekickCSS = useBasekick(size);
-
-  const marginProps = {
-    // Just sending the props down to `Text` seems to reset them when undefined
-    ...(marginX && { marginX }),
-    ...(marginY && { marginY }),
-    marginTop,
-    marginRight,
-    marginBottom,
-    marginLeft,
-  };
 
   const styleProps = {
     fontWeight: bold && "bold",
@@ -42,13 +27,14 @@ export const Text: React.FC<TextProps> = ({
   };
 
   return (
-    <Element {...marginProps} css={css}>
+    <Element css={css} {...rest}>
       <BaseText
         size={size}
         component="BaseText"
         css={merge(basekickCSS, styleProps)}
-        {...rest}
-      />
+      >
+        {children}
+      </BaseText>
     </Element>
   );
 };
