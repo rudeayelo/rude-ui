@@ -12,7 +12,6 @@ export interface TextProps extends ElementProps {
 }
 
 export const Text: React.FC<TextProps> = ({
-  css,
   bold,
   italic,
   size = 3,
@@ -27,7 +26,7 @@ export const Text: React.FC<TextProps> = ({
   };
 
   return (
-    <Element css={css} {...rest}>
+    <Element {...rest}>
       <BaseText
         size={size}
         component="BaseText"
