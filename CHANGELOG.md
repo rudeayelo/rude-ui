@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.3](https://github.com/rudeayelo/rude-ui/compare/v0.17.2...v0.17.3) (2020-07-11)
+
+
+### Bug Fixes
+
+* avoid css changes in `Text` ([f5238ff](https://github.com/rudeayelo/rude-ui/commit/f5238ff70bb2e6852b82b2a2c4fefd009985c9ae))
+* forward the `as` prop to `Button` ([c5b97bc](https://github.com/rudeayelo/rude-ui/commit/c5b97bc660bd905c42aa3f53ffcb90901518b0a6))
+
 ### [0.17.2](https://github.com/rudeayelo/rude-ui/compare/v0.17.1...v0.17.2) (2020-04-19)
 
 
