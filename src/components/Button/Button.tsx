@@ -118,6 +118,7 @@ export const Button: React.FC<ButtonProps> = ({
   tone = "info",
   size = "medium",
   appearance = "primary",
+  as = "button",
   iconBefore,
   iconAfter,
   iconColor,
@@ -126,7 +127,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => (
   <Element
-    as="button"
+    as={as}
     component="Button"
     variant={appearance}
     size={size}
